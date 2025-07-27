@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 
@@ -18,9 +18,10 @@ import { Badge } from "@/components/Badge";
 import { Button } from "@/components/Button";
 import { SeamlessLoop } from "@/components/SeamlessLoop";
 import { Slider } from "@/components/Slider";
+import { ArrowNavigation } from "@/components/ArrowNavigation";
+import { ViewCards } from "@/components/ViewCards";
 
 export default function Home() {
-
 
   const sliderRef = useRef(null);
 
@@ -36,9 +37,6 @@ export default function Home() {
     }
   };
 
-
-
-
   const images = [
     { src: "/assets/imgs/demoWebsites/1.svg", alt: "Website Demo 1", width: 456, height: 307 },
     { src: "/assets/imgs/demoWebsites/2.svg", alt: "Website Demo 2", width: 456, height: 307 },
@@ -48,7 +46,6 @@ export default function Home() {
     { src: "/assets/imgs/demoWebsites/mob-2.svg", alt: "Website Mob Demo 2", width: 162, height: 307 },
     { src: "/assets/imgs/demoWebsites/5.svg", alt: "Website Demo 5", width: 456, height: 307 },
   ];
-
 
   const features = [
     {
@@ -137,7 +134,6 @@ export default function Home() {
     }
   ];
 
-
   const toolWeUse = [
     { src: "/assets/imgs/tools/figma.svg", alt: "Figma", width: 40, height: 40 },
     { src: "/assets/imgs/tools/gsap.svg", alt: "Gsap", width: 40, height: 40 },
@@ -159,7 +155,7 @@ export default function Home() {
       id: 2,
       icon: "/assets/imgs/tools/gsap.svg",
       title: "GSAP",
-      description: "Interactive prototypes for advanced animations website Interactive prototypes for advanced animations website Interactive prototypes for advanced animations website.. "
+      description: "Interactive prototypes for advanced animations website."
     },
     {
       id: 3,
@@ -205,6 +201,41 @@ export default function Home() {
     }
   ];
 
+  const projectList = [
+    {
+      id: 1,
+      src: "/assets/imgs/projects/project-1.avif",
+      title: "Clever — Saas Landing Page",
+      pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+      url: "/project-clever",
+      text: "View Projects"
+    },
+    {
+      id: 2,
+      src: "/assets/imgs/projects/project-1.avif",
+      title: "Clever — Saas Landing Page",
+      pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+      url: "/project-clever",
+      text: "View Projects"
+    },
+    {
+      id: 3,
+      src: "/assets/imgs/projects/project-1.avif",
+      title: "Clever — Saas Landing Page",
+      pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+      url: "/project-clever",
+      text: "View Projects"
+    },
+    {
+      id: 4,
+      src: "/assets/imgs/projects/project-1.avif",
+      title: "Clever — Saas Landing Page",
+      pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+      url: "/project-clever",
+      text: "View Projects"
+    }
+
+  ]
 
 
 
@@ -249,11 +280,10 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* i need here top aniamtion canavas  */}
       <section className="mt-50 h-dvh">
         <div className="flex flex-col justify-center items-center text-center max-w-3xl mx-auto">
-          <h2 className="text-5xl/15 font-bold">Why We, <span className="text-blue-600">Stands Out</span></h2>
+          <h3 className="text-4xl/15 font-bold">Why We, <span className="text-blue-600">Stands Out</span></h3>
           <p className="text-slate-400 mt-5">
             Experience the perfect blend of creativity, cutting-edge technology, and client-first strategies.
             We don’t just build websites — we craft digital experiences that inspire trust and drive results.
@@ -264,14 +294,11 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* i need here top aniamtion canavas  */}
       <section className="mt-50">
         <div className="flex justify-center items-center flex-col">
-          <Badge text="Our Process" />
-
-          <h2 className="z-2 text-5xl/15 font-bold max-w-4xl mx-auto ">Our Approach</h2>
-          <p className="z-2 text-slate-400 mt-5">Explore our streamlined approach to creating bespoke websites that align with your goals.</p>
+          <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">Our Approach</h3>
+          <p className="z-2 text-slate-400 mt-1">Explore our streamlined approach to creating bespoke websites that align with your goals.</p>
           <div className="mt-10">
             <FeaturesCard icons='true' style='true' datas={ourapproach} steps classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2" />
           </div>
@@ -279,20 +306,17 @@ export default function Home() {
 
       </section>
 
-
-
-
       <section className="mt-50 flex justify-between gap-10 items-center max-w-6xl m-auto">
 
         <div className="flex-1 flex items-start flex-col">
           <Badge text="About Us" />
-          <h2 className="z-2 text-5xl/15 font-bold">
-            Discover Who We Are <br /> & Our Mission
-          </h2>
-          <p className="z-2 text-slate-400 mt-5">
+          <h3 className="z-2 text-4xl/15 font-bold mt-2">
+            Our Story & Mission
+          </h3>
+          <p className="z-2 text-slate-400 mt-1">
             Discover who we are and our mission at WebDesigo. We are a passionate team of creative professionals dedicated to crafting exceptional web design solutions. Our mission is to empower businesses with innovative websites that not only captivate but also drive results.
           </p>
-          <div className="mt-10 flex flex-wrap gap-5 items-center">
+          <div className="mt-5 flex flex-wrap gap-5 items-center">
             <Button url="/contact-us" text="Contact Us" />
             <Button url="/contact-us" text="View Projects" classes />
           </div>
@@ -307,52 +331,51 @@ export default function Home() {
         />
       </section>
 
-
-
-
       <section className="mt-50 ">
         <div className="flex flex-col items-start max-w-6xl m-auto">
-          <Badge text="Tools We Use" />
 
           <div className="flex justify-between items-center w-full">
-            <h2 className="z-2 text-5xl/15 font-bold w-auto">
-              Tools We Utilize for Excellence
-            </h2>
-            <div className="flex gap-4">
-              <button className="w-10 aspect-square border rounded-full flex items-center justify-center text-lg font-bold"
-                onClick={handlePrevClick}
-              >
-                ←
-              </button>
-              <button className="w-10 aspect-square border rounded-full flex items-center justify-center text-lg font-bold"
-                onClick={handleNextClick}
-              >
+            <div className="max-w-2xl">
+              <h3 className="z-2 text-4xl/15 font-bold w-auto">
+                Tools We Utilize for Excellence
+              </h3>
+              <p className="z-2 text-slate-400 mt-1">
+                Discover the advanced tools and technologies we leverage to create cutting-edge websites.
+              </p>
+            </div>
 
-                →
-              </button>
+
+            <div className="flex gap-4">
+              <ArrowNavigation handleClick={handlePrevClick} />
+              <ArrowNavigation handleClick={handleNextClick} right />
             </div>
           </div>
 
 
         </div>
 
-        <div className="overflow-hidden mt-10"
+        <div className="mt-10"
           style={{
             maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
           }}
         >
-          <Slider ref={sliderRef} data={toolWeUseDetails} />
+          <Slider ref={sliderRef} datas={toolWeUseDetails} />
         </div>
       </section >
 
+      <section className="mt-50 mb-50">
+        <div className="flex justify-center items-center flex-col">
+          <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">
+            Explore Our Recent Projects
+          </h3>
+          <p className="z-2 text-slate-400 mt-1">
+            Browse through our portfolio showcasing diverse, innovative web design projects and client successes.
+          </p>
 
-
-
-      <section className="mt-50 h-dvh">
-        {/* <p className="z-2 text-slate-400 mt-5">Discover the advanced tools and technologies we leverage to create cutting-edge websites. </p> */}
-        {/* <div className="mt-10">
-          <FeaturesCard datas={toolWeUseDetails} classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" />
-        </div> */}
+          <div className="mt-10">
+            <ViewCards data={projectList} />
+          </div>
+        </div>
       </section>
 
     </div >
