@@ -2,68 +2,67 @@
 
 import Link from "next/link";
 import { CgArrowTopRightO } from "react-icons/cg";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react"; // Import useGSAP
+
+// Register the useGSAP plugin (important for it to work correctly)
+gsap.registerPlugin(useGSAP);
 
 export const Button = ({ url, text, classes }) => {
-    const iconWrapperRef = useRef(null);
-    const btnRef = useRef(null);
+    const btnRef = useRef(null); // Ref for the button element, which will be the scope for GSAP
+    const iconWrapperRef = useRef(null); // Ref for the icon wrapper
 
-    useEffect(() => {
-        const btn = btnRef.current;
+    // useGSAP hook for GSAP animations and automatic cleanup
+    useGSAP(() => {
         const [icon1, icon2] = iconWrapperRef.current.children;
 
-        // Place icon2 diagonally bottom-right (45°)
+        // Initial placement of icon2
         gsap.set(icon2, { x: "100%", y: "-100%" });
 
-        const mouseEnter = () => {
-            gsap.to(icon1, {
-                x: "-100%",
-                y: "100%", // move diagonally top-right
-                duration: 0.3,
-                ease: "power2.inOut",
-            });
-            gsap.to(icon2, {
+        // Create GSAP timelines for hover effects
+        const tl = gsap.timeline({ paused: true });
+        tl.to(icon1, {
+            x: "-100%",
+            y: "100%",
+            duration: 0.3,
+            ease: "power2.inOut",
+        });
+        tl.to(
+            icon2,
+            {
                 x: "0%",
-                y: "0%", // bring icon2 to center
+                y: "0%",
                 duration: 0.3,
                 ease: "power2.inOut",
-            });
-        };
+            },
+            "<" // Start this animation at the same time as the previous one
+        );
 
-        const mouseLeave = () => {
-            gsap.to(icon1, {
-                x: "0%",
-                y: "0%", // reset
-                duration: 0.3,
-                ease: "power2.inOut",
-            });
-            gsap.to(icon2, {
-                x: "100%",
-                y: "-100%", // move back diagonally bottom-right
-                duration: 0.3,
-                ease: "power2.inOut",
-            });
-        };
 
-        btn.addEventListener("mouseenter", mouseEnter);
-        btn.addEventListener("mouseleave", mouseLeave);
+        // Add event listeners to play/reverse the timelines
+        const btn = btnRef.current;
 
-        return () => {
-            btn.removeEventListener("mouseenter", mouseEnter);
-            btn.removeEventListener("mouseleave", mouseLeave);
-        };
-    }, []);
+        if (btn) {
+            const mouseEnterHandler = () => tl.play();
+            const mouseLeaveHandler = () => tl.reverse();
+
+            btn.addEventListener("mouseenter", mouseEnterHandler);
+            btn.addEventListener("mouseleave", mouseLeaveHandler);
+
+            // Cleanup function returned by useGSAP will remove these event listeners automatically
+            return () => {
+                btn.removeEventListener("mouseenter", mouseEnterHandler);
+                btn.removeEventListener("mouseleave", mouseLeaveHandler);
+            };
+        }
+    }, { scope: btnRef }); // The `scope` option ensures animations are scoped to `btnRef` and cleaned up
 
     return (
-        <Link
-            href={url}
-            ref={btnRef}
-            className="backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/15 group"
-        >
+        <Link href={url} ref={btnRef}>
             <button
                 className={`flex gap-2 items-center px-6 py-2 rounded-full text-secondary cursor-pointer
-                ${classes
+                 ${classes
                         ? "bg-background border border-blue-500/20"
                         : "bg-primary"
                     }`}

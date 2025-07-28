@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { BiCheckCircle } from "react-icons/bi";
-
 
 export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
 
@@ -62,7 +60,6 @@ export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
 
                                     ) : (<p></p>)
                                 }
-
 
 
                                 <h3 className="text-white text-xl font-semibold mb-3">

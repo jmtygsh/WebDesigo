@@ -4,10 +4,6 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 
-import { gsap } from "gsap";
-
-import { FaStar, FaRocket, FaPaintBrush, FaCode, FaBolt, FaSearch } from "react-icons/fa";
-
 
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
@@ -20,6 +16,16 @@ import { SeamlessLoop } from "@/components/SeamlessLoop";
 import { Slider } from "@/components/Slider";
 import { ArrowNavigation } from "@/components/ArrowNavigation";
 import { ViewCards } from "@/components/ViewCards";
+import { ServiceCard } from "@/components/ServiceCard";
+import { SeamlessService } from "@/components/SeamlessService";
+
+import {
+  images, features, whyus, ourapproach,
+  toolWeUse, toolWeUseDetails, projectList, serviceCards,
+  seamlessLoopService
+} from '@/data/index';
+
+
 
 export default function Home() {
 
@@ -36,206 +42,6 @@ export default function Home() {
       sliderRef.current.nextSlide();
     }
   };
-
-  const images = [
-    { src: "/assets/imgs/demoWebsites/1.svg", alt: "Website Demo 1", width: 456, height: 307 },
-    { src: "/assets/imgs/demoWebsites/2.svg", alt: "Website Demo 2", width: 456, height: 307 },
-    { src: "/assets/imgs/demoWebsites/mob-1.svg", alt: "Website Mob Demo 1", width: 162, height: 307 },
-    { src: "/assets/imgs/demoWebsites/3.svg", alt: "Website Demo 3", width: 456, height: 307 },
-    { src: "/assets/imgs/demoWebsites/4.avif", alt: "Website Demo 4", width: 456, height: 307 },
-    { src: "/assets/imgs/demoWebsites/mob-2.svg", alt: "Website Mob Demo 2", width: 162, height: 307 },
-    { src: "/assets/imgs/demoWebsites/5.svg", alt: "Website Demo 5", width: 456, height: 307 },
-  ];
-
-  const features = [
-    {
-      id: 1,
-      icon: <FaPaintBrush className="w-6 h-6 text-white" />,
-      title: "Custom Designs",
-      description: "Tailored websites meticulously crafted to reflect your brand."
-    },
-    {
-      id: 2,
-      icon: <FaBolt className="w-6 h-6 text-white" />,
-      title: "Fast Performance",
-      description: "Optimized for lightning-fast speed to enhance user experience."
-    },
-    {
-      id: 3,
-      icon: <FaSearch className="w-6 h-6 text-white" />,
-      title: "SEO Friendly",
-      description: "Designed to improve SEO and increase visibility effortlessly."
-    }
-  ];
-
-  const whyus = [
-    {
-      id: 1,
-      icon: "/assets/imgs/features/team.svg",
-      title: "Expert Team",
-      description: "Dedicated professionals with expertise in cutting-edge web design + development."
-    },
-    {
-      id: 2,
-      icon: "/assets/imgs/features/client.svg",
-      title: "Client-Centric Approach",
-      description: "Tailoring solutions to meet your unique business needs and exceed expectations."
-    },
-    {
-      id: 3,
-      icon: "/assets/imgs/features/experience.svg",
-      title: "Proven Experience",
-      description: "Years of successfully delivering impactful web solutions across diverse industries."
-    },
-    {
-      id: 4,
-      icon: "/assets/imgs/features/delivery.svg",
-      title: "Timely Delivery",
-      description: "Meeting deadlines consistently without compromising on quality or precision."
-    },
-    {
-      id: 5,
-      icon: "/assets/imgs/features/responsive.svg",
-      title: "Responsive Solutions",
-      description: "Ensuring seamless performance & Responsive across all devices for optimal user experience."
-    },
-    {
-      id: 6,
-      icon: "/assets/imgs/features/transparent.svg",
-      title: "Transparent Communication",
-      description: "Clear, open lines of communication throughout every stage of your project.s"
-    }
-  ];
-
-  const ourapproach = [
-    {
-      id: 1,
-      icon: <FaStar className="w-6 h-6 text-white" />,
-      title: "Discovery Phase",
-      description: "Understanding your brand, objectives, and target audience to define project goals."
-    },
-    {
-      id: 2,
-      icon: <FaRocket className="w-6 h-6 text-white" />,
-      title: "Design Concept",
-      description: "Creating initial design concepts based on insights gathered during the discovery phase."
-    },
-    {
-      id: 3,
-      icon: <FaPaintBrush className="w-6 h-6 text-white" />,
-      title: "Development & Testing",
-      description: "Building and refining the website, ensuring functionality and compatibility across devices."
-    },
-    {
-      id: 4,
-      icon: <FaCode className="w-6 h-6 text-white" />,
-      title: "Launch & Support",
-      description: "Deploying the finalized website and providing ongoing support to ensure long-term success."
-    }
-  ];
-
-  const toolWeUse = [
-    { src: "/assets/imgs/tools/figma.svg", alt: "Figma", width: 40, height: 40 },
-    { src: "/assets/imgs/tools/gsap.svg", alt: "Gsap", width: 40, height: 40 },
-    { src: "/assets/imgs/tools/nextjs.svg", alt: "Nextjs", width: 40, height: 40 },
-    { src: "/assets/imgs/tools/react-js.svg", alt: "React js", width: 40, height: 40 },
-    { src: "/assets/imgs/tools/shopify.svg", alt: "Shopify", width: 40, height: 40 },
-    { src: "/assets/imgs/tools/vite.svg", alt: "Vite", width: 40, height: 40 },
-    { src: "/assets/imgs/tools/wordpress.svg", alt: "Wordpress", width: 40, height: 40 },
-  ]
-
-  const toolWeUseDetails = [
-    {
-      id: 1,
-      icon: "/assets/imgs/tools/figma.svg",
-      title: "Figma",
-      description: "Collaborative design and prototyping tool online."
-    },
-    {
-      id: 2,
-      icon: "/assets/imgs/tools/gsap.svg",
-      title: "GSAP",
-      description: "Interactive prototypes for advanced animations website."
-    },
-    {
-      id: 3,
-      icon: "/assets/imgs/tools/nextjs.svg",
-      title: "Next Js",
-      description: "E-commerce platform for online shopping websites."
-    },
-    {
-      id: 4,
-      icon: "/assets/imgs/tools/react-js.svg",
-      title: "React JS",
-      description: "All-in-one workspace for notes and project tasks."
-    },
-    {
-      id: 5,
-      icon: "/assets/imgs/tools/shopify.svg",
-      title: "Shopify",
-      description: "All-in-one workspace for notes and project tasks."
-    },
-    {
-      id: 6,
-      icon: "/assets/imgs/tools/vite.svg",
-      title: "Vite",
-      description: "All-in-one workspace for notes and project tasks."
-    },
-    {
-      id: 7,
-      icon: "/assets/imgs/tools/wordpress.svg",
-      title: "Wordpress",
-      description: "All-in-one workspace for notes and project tasks."
-    },
-    {
-      id: 8,
-      icon: "/assets/imgs/tools/wordpress.svg",
-      title: "Wordpress",
-      description: "All-in-one workspace for notes and project tasks."
-    },
-    {
-      id: 9,
-      icon: "/assets/imgs/tools/wordpress.svg",
-      title: "Wordpress",
-      description: "All-in-one workspace for notes and project tasks."
-    }
-  ];
-
-  const projectList = [
-    {
-      id: 1,
-      src: "/assets/imgs/projects/project-1.avif",
-      title: "Clever — Saas Landing Page",
-      pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-      url: "/project-clever",
-      text: "View Projects"
-    },
-    {
-      id: 2,
-      src: "/assets/imgs/projects/project-1.avif",
-      title: "Clever — Saas Landing Page",
-      pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-      url: "/project-clever",
-      text: "View Projects"
-    },
-    {
-      id: 3,
-      src: "/assets/imgs/projects/project-1.avif",
-      title: "Clever — Saas Landing Page",
-      pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-      url: "/project-clever",
-      text: "View Projects"
-    },
-    {
-      id: 4,
-      src: "/assets/imgs/projects/project-1.avif",
-      title: "Clever — Saas Landing Page",
-      pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-      url: "/project-clever",
-      text: "View Projects"
-    }
-
-  ]
 
 
 
@@ -259,7 +65,7 @@ export default function Home() {
       <section className="mt-20">
         <div className="flex justify-between items-center gap-3 max-w-3/4 m-auto">
           <div className="flex-1 h-[1px] bg-gradient-to-l from-[#171d45] from-[28.8%] to-[#171d4500]"></div>
-          <h3 className="text-slate-400">See How We Can Help Your Brand</h3>
+          <h4 className="text-slate-400">See How We Can Help Your Brand</h4>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-[#171d45] from-[28.8%] to-[#171d4500]"></div>
         </div>
 
@@ -328,6 +134,7 @@ export default function Home() {
           width={600}
           height={600}
           className="h-[400px] flex-1 rounded-xl"
+          draggable="false"
         />
       </section>
 
@@ -363,7 +170,7 @@ export default function Home() {
         </div>
       </section >
 
-      <section className="mt-50 mb-50">
+      <section className="mt-50">
         <div className="flex justify-center items-center flex-col">
           <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">
             Explore Our Recent Projects
@@ -375,9 +182,42 @@ export default function Home() {
           <div className="mt-10">
             <ViewCards data={projectList} />
           </div>
+
+          <div className="mt-20">
+            <Button url="/view-all-works" text="View All Works" classes />
+          </div>
         </div>
       </section>
 
+      <section className="mt-50 mb-50">
+        <div className="flex justify-center items-center flex-col">
+          <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">Explore Our Core Services</h3>
+          <p className="z-2 text-slate-400 mt-1">
+            Discover our comprehensive range of services tailored to enhance your digital presence.
+          </p>
+
+          <div className="mt-10 max-w-6xl m-auto">
+            <ServiceCard data={serviceCards} />
+          </div>
+        </div>
+
+
+        <div className="flex justify-between items-center gap-3 max-w-3/4 m-auto mt-20">
+          <div className="flex-1 h-[1px] bg-gradient-to-l from-[#171d45] from-[28.8%] to-[#171d4500]"></div>
+          <h4 className="text-slate-400">Other Services</h4>
+          <div className="flex-1 h-[1px] bg-gradient-to-r from-[#171d45] from-[28.8%] to-[#171d4500]"></div>
+        </div>
+
+        <div className="mt-10 overflow-hidden max-w-6xl m-auto"
+          style={{
+            maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+            WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+          }}
+        >
+
+          <SeamlessService data={seamlessLoopService} />
+        </div>
+      </section>
     </div >
   );
 }

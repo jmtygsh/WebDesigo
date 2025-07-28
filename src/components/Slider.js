@@ -1,6 +1,5 @@
 import React, { useRef, useImperativeHandle, forwardRef } from 'react'; // Added forwardRef
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y } from 'swiper/modules'; // Import Swiper modules
 
 // Import Swiper styles
 import 'swiper/css';
@@ -40,17 +39,7 @@ export const Slider = forwardRef(({ datas }, ref) => { // Receive 'ref' as the s
                     spaceBetween={25}
                     slidesPerView={4}
                     loop={true}
-                    modules={[A11y]}
-                    a11y={{
-                        prevSlideMessage: 'Previous item',
-                        nextSlideMessage: 'Next item',
-                        firstSlideMessage: 'This is the first item',
-                        lastSlideMessage: 'This is the last item',
-                        paginationBulletMessage: 'Go to item {{index}}',
-                        containerMessage: 'Content Carousel',
-                        containerRoleDescriptionMessage: 'carousel',
-                        itemRoleDescriptionMessage: 'slide',
-                    }}
+                 
                     keyboard={{
                         enabled: true,
                         onlyInViewport: true,
