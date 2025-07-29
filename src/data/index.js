@@ -1,13 +1,12 @@
 import { FaStar, FaRocket, FaPaintBrush, FaCode, FaBolt, FaSearch } from "react-icons/fa";
 
 export const images = [
-    { src: "/assets/imgs/demoWebsites/1.svg", alt: "Website Demo 1", width: 456, height: 307 },
-    { src: "/assets/imgs/demoWebsites/2.svg", alt: "Website Demo 2", width: 456, height: 307 },
-    { src: "/assets/imgs/demoWebsites/mob-1.svg", alt: "Website Mob Demo 1", width: 162, height: 307 },
-    { src: "/assets/imgs/demoWebsites/3.svg", alt: "Website Demo 3", width: 456, height: 307 },
-    { src: "/assets/imgs/demoWebsites/4.avif", alt: "Website Demo 4", width: 456, height: 307 },
-    { src: "/assets/imgs/demoWebsites/mob-2.svg", alt: "Website Mob Demo 2", width: 162, height: 307 },
-    { src: "/assets/imgs/demoWebsites/5.svg", alt: "Website Demo 5", width: 456, height: 307 },
+    { src: "/assets/imgs/demoWebsites/1.png", alt: "Website Demo 1", width: 456, height: 307 },
+    { src: "/assets/imgs/demoWebsites/2.png", alt: "Website Demo 2", width: 456, height: 307 },
+    { src: "/assets/imgs/demoWebsites/mob1.png", alt: "Website Mob Demo 1", width: 162, height: 307 },
+    { src: "/assets/imgs/demoWebsites/3.png", alt: "Website Demo 3", width: 456, height: 307 },
+    { src: "/assets/imgs/demoWebsites/4.png", alt: "Website Demo 4", width: 456, height: 307 },
+    { src: "/assets/imgs/demoWebsites/mob2.png", alt: "Website Mob Demo 2", width: 162, height: 307 },
 ];
 
 export const features = [
@@ -239,32 +238,105 @@ export const seamlessLoopService = [
     {
         id: 1,
         icon: "/assets/imgs/services/Branding.svg",
-        title: "Branding"
+        title: "Branding",
+        w: 20,
+        h: 20,
     },
     {
         id: 2,
         icon: "/assets/imgs/services/Content-Writing.svg",
-        title: "Content Writing"
+        title: "Content Writing",
+        w: 20,
+        h: 20,
     },
     {
         id: 3,
         icon: "/assets/imgs/services/Logo-Design.svg",
-        title: "Logo Design"
+        title: "Logo Design",
+        w: 20,
+        h: 20,
     },
     {
         id: 4,
         icon: "/assets/imgs/services/Packaging-Design.svg",
-        title: "Packaging Design"
+        title: "Packaging Design",
+        w: 20,
+        h: 20,
     },
     {
         id: 5,
         icon: "/assets/imgs/services/SEO.svg",
-        title: "SEO"
+        title: "SEO",
+        w: 20,
+        h: 20,
     },
     {
         id: 6,
         icon: "/assets/imgs/services/Social-Post-Design.svg",
-        title: "Social Post Design"
+        title: "Social Post Design",
+        w: 20,
+        h: 20,
     }
+
+]
+
+
+export const countNumber = [
+    {
+        id: 1,
+        count: 150,
+        sign: '+',
+        des: 'Happy Customers'
+    },
+    {
+        id: 2,
+        count: 50,
+        sign: '+',
+        des: 'Projects Completed'
+    },
+    {
+        id: 3,
+        count: 4,
+        sign: '+',
+        des: 'Years of Experience'
+    },
+    {
+        id: 4,
+        count: 86,
+        sign: '+',
+        des: 'Team Members'
+    },
+]
+
+export const trustedByLeadingBrands = [
+    {
+        id: 1,
+        icon: "/assets/imgs/trustedCompany/c1.svg",
+        w: 160,
+        h: 160,
+    },
+    {
+        id: 2,
+        icon: "/assets/imgs/trustedCompany/c2.svg",
+        w: 160,
+        h: 160,
+    },
+    {
+        id: 3,
+        icon: "/assets/imgs/trustedCompany/c3.svg",
+        w: 160,
+        h: 160,
+    },
+    {
+        id: 4,
+        icon: "/assets/imgs/trustedCompany/c4.svg",
+        w: 160,
+        h: 160,
+    }, {
+        id: 5,
+        icon: "/assets/imgs/trustedCompany/c5.svg",
+        w: 160,
+        h: 160,
+    },
 
 ]

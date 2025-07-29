@@ -10,6 +10,9 @@ gsap.registerPlugin(useGSAP);
 
 export const SeamlessLoop = ({ icons, rmborder }) => {
 
+
+    if (!icons) return null;
+
     const marqueeRef = useRef(null);
 
     useGSAP(() => {
@@ -52,7 +55,7 @@ export const SeamlessLoop = ({ icons, rmborder }) => {
                     width={img.width || 456} // Use numbers for width/height props
                     height={img.height || 307} // Use numbers for width/height props
                     draggable="false"
-                    className={`object-cover object-center rounded-2xl overflow-hidden 
+                    className={`object-cover object-center rounded-2xl overflow-hidden bg-transparent
                          ${rmborder ? '' : 'border-4 border-[#363434]'}
                      `}
                 />

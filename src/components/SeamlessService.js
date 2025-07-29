@@ -5,7 +5,7 @@ import gsap from "gsap";
 // Register the GSAP plugin for React to make sure it's ready to use.
 gsap.registerPlugin(useGSAP);
 
-export const SeamlessService = ({ data }) => {
+export const SeamlessService = ({ data, brd }) => {
 
     // If there's no data or it's not a proper list, don't show anything.
     if (!data || !Array.isArray(data) || data.length === 0) return null;
@@ -36,8 +36,6 @@ export const SeamlessService = ({ data }) => {
         // The distance we need to scroll to show one full loop (one set of our original items).
         const widthOfOneDataSet = totalWidthOfDuplicatedContent / 2;
 
-        console.log(`Total width of all items (including duplicate): ${totalWidthOfDuplicatedContent}px`);
-        console.log(`Distance to scroll for one full loop: ${widthOfOneDataSet}px`);
 
         // Start the GSAP animation!
         gsap.fromTo(
@@ -72,7 +70,7 @@ export const SeamlessService = ({ data }) => {
 
     return (
         // This outer div acts as a window. Anything that scrolls out of it will be hidden.
-        <div className='overflow-hidden w-full'>
+        <div className='overflow-hidden w-full h-15'>
             {/* This is the div that actually scrolls. It holds all our items. */}
             <div
                 className='flex gap-5 items-center flex-nowrap w-max'
@@ -88,12 +86,12 @@ export const SeamlessService = ({ data }) => {
                         key={`${item.id}-${index}`}
                         // Styling for each item: flex, gap, border, text color, padding, rounded corners,
                         // and 'flex-shrink-0' to prevent items from shrinking when space is limited.
-                        className='flex gap-3 items-center border border-[#171d45] text-secondary px-4 py-2 rounded-full flex-shrink-0'
+                        className={`flex gap-3 items-center text-secondary  ${brd ? ('border border-[#171d45]  px-4 py-2 rounded-full flex-shrink-0') : ('')} `}
                     >
                         {/* Display the icon image for the item. */}
-                        <img src={item.icon} width={20} height={20} alt={item.title} draggable="false" />
+                        <img src={item.icon} width={item.w} height={item.h} alt={item.title} draggable="false" />
                         {/* Display the title of the item. */}
-                        <h4>{item.title}</h4>
+                        {item.title ? (<h4>{item.title}</h4>) : ('')}
                     </div>
                 ))}
             </div>

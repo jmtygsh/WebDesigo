@@ -18,11 +18,12 @@ import { ArrowNavigation } from "@/components/ArrowNavigation";
 import { ViewCards } from "@/components/ViewCards";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SeamlessService } from "@/components/SeamlessService";
+import { Count } from "@/components/Count";
 
 import {
   images, features, whyus, ourapproach,
   toolWeUse, toolWeUseDetails, projectList, serviceCards,
-  seamlessLoopService
+  seamlessLoopService, countNumber, trustedByLeadingBrands
 } from '@/data/index';
 
 
@@ -189,7 +190,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-50 mb-50">
+      <section className="mt-50">
         <div className="flex justify-center items-center flex-col">
           <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">Explore Our Core Services</h3>
           <p className="z-2 text-slate-400 mt-1">
@@ -208,16 +209,44 @@ export default function Home() {
           <div className="flex-1 h-[1px] bg-gradient-to-r from-[#171d45] from-[28.8%] to-[#171d4500]"></div>
         </div>
 
-        <div className="mt-10 overflow-hidden max-w-6xl m-auto"
+        <div className="mt-7 overflow-hidden max-w-6xl m-auto"
           style={{
             maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
             WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
           }}
         >
 
-          <SeamlessService data={seamlessLoopService} />
+          <SeamlessService data={seamlessLoopService} brd />
         </div>
       </section>
-    </div >
+
+      <section className="mt-50 mb-50 flex justify-between gap-10 items-center max-w-6xl m-auto">
+
+        <div className="flex-1">
+          <Count data={countNumber} />
+        </div>
+
+        <div className="flex-1 flex items-start flex-col">
+          <Badge text="Results & Analytics" />
+          <h3 className="z-2 text-4xl font-bold mt-2">
+            Performance Insights and the Analytics Overview
+          </h3>
+
+          <div className="mt-10">
+            <h4 className="text-xl text-secondary">Trusted by Leading Brands</h4>
+
+            <div className="mt-7 max-w-lg m-auto flex"
+              style={{
+                maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+                WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+              }}
+            >
+              <SeamlessService data={trustedByLeadingBrands} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }
