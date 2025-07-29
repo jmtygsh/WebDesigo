@@ -31,15 +31,19 @@ export const Slider = forwardRef(({ datas }, ref) => { // Receive 'ref' as the s
     }));
 
     return (
-        <div className="relative px-5 mt-5">
-            <div className="">
+        <div className="relative px-5 mt-5"
+            style={{
+                maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
+            }}
+        >
+            <div>
                 <Swiper
                     // Assign the local ref to the Swiper component itself
                     onSwiper={(swiper) => (swiperInstanceRef.current = swiper)}
                     spaceBetween={25}
                     slidesPerView={4}
                     loop={true}
-                 
+
                     keyboard={{
                         enabled: true,
                         onlyInViewport: true,

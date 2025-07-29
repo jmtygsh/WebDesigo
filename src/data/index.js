@@ -340,3 +340,77 @@ export const trustedByLeadingBrands = [
     },
 
 ]
+
+
+export const testimonials = [
+    {
+        id: 1,
+        src: "/assets/imgs/profiles/profile1.jpg", // Placeholder image path
+        name: "Sophia Chen",
+        username: "@sophiaC",
+        comment: "Webdesigo transformed our outdated website into a modern, responsive masterpiece. Their design team truly understood our vision, and the development process was seamless!",
+    },
+    {
+        id: 2,
+        src: "/assets/imgs/profiles/profile2.jpg", // Placeholder image path
+        name: "Liam O'Connell",
+        username: "@liamO",
+        comment: "Exceptional SEO results!",
+    },
+    {
+        id: 3,
+
+        name: "Ava Rodriguez",
+        username: "@avaR",
+        comment: "The SEO strategy from Webdesigo has significantly boosted our organic traffic and search rankings. We're seeing a remarkable return on investment and couldn't be happier with their expertise in website optimization.",
+    },
+    {
+        id: 4,
+    
+        name: "Noah Patel",
+        username: "@noahP",
+        comment: "Top-notch web development.",
+    },
+    {
+        id: 5,
+ 
+        name: "Isabella Garcia",
+        username: "@bellaG",
+        comment: "From initial concept to final launch, Webdesigo provided comprehensive website solutions. Their attention to detail in both design and functionality was outstanding, making our online presence truly shine.",
+    },
+    {
+        id: 6,
+  
+        name: "Mason Kim",
+        username: "@masonK",
+        comment: "Great website support.",
+    },
+    {
+        id: 7,
+     
+        name: "Charlotte White",
+        username: "@charlotteW",
+        comment: "Webdesigo's development team is incredibly skilled. They built a custom feature for our e-commerce site that exceeded our expectations, improving user experience and conversion rates dramatically. Highly recommend their technical prowess!",
+    },
+    {
+        id: 8,
+   
+        name: "Ethan Brown",
+        username: "@ethanB",
+        comment: "Fantastic design work!",
+    },
+    {
+        id: 9,
+       
+        name: "Amelia Jones",
+        username: "@ameliaJ",
+        comment: "Our website's performance has never been better thanks to Webdesigo's ongoing maintenance and optimization services. They are proactive and always ensure our site is running smoothly and securely.",
+    },
+    {
+        id: 10,
+     
+        name: "Lucas Davis",
+        username: "@lucasD",
+        comment: "Highly recommend their services!",
+    },
+];

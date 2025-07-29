@@ -19,11 +19,13 @@ import { ViewCards } from "@/components/ViewCards";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SeamlessService } from "@/components/SeamlessService";
 import { Count } from "@/components/Count";
+import { Testimonials } from "@/components/Testimonials";
 
 import {
   images, features, whyus, ourapproach,
   toolWeUse, toolWeUseDetails, projectList, serviceCards,
-  seamlessLoopService, countNumber, trustedByLeadingBrands
+  seamlessLoopService, countNumber, trustedByLeadingBrands,
+  testimonials
 } from '@/data/index';
 
 
@@ -162,9 +164,9 @@ export default function Home() {
 
         </div>
 
-        <div className="mt-10"
+        <div className="mt-10 "
           style={{
-            maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+            maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
           }}
         >
           <Slider ref={sliderRef} datas={toolWeUseDetails} />
@@ -247,6 +249,21 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section className="mt-50 flex flex-col justify-center items-center mb-50">
+        <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">
+          Client Success Stories
+        </h3>
+        <p className="z-2 text-slate-400 mt-1">Discover what our clients say about their experiences and success working with us.</p>
+
+        <div className="mt-10"
+          style={{
+            maskImage: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
+          }}>
+          < Testimonials data={testimonials} />
+        </div>
+       
+      </section>
     </div>
   );
 }
