@@ -4,14 +4,14 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { navItems } from "@/data/index";
-
 import { Button } from "@/components/Button";
 
 export const Header = () => {
 
-    if (!navItems) return null;
-    
     const pathname = usePathname(); // Get the current path
+
+    if (!navItems) return null;
+
     return (
         <nav className="flex justify-between items-center px-6 md:px-10 py-4 fixed left-0 right-0 z-99">
             <span className="text-2xl font-bold ">WebDesigo</span>

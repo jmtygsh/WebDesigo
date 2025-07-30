@@ -19,7 +19,7 @@ export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
                                 <div className="absolute -top-6.5 p-2 bg-gradient-to-r from-[#061125] to-[#061125] left-3 w-12 h-12 flex items-center justify-center rounded-full shadow-lg"
 
                                 >
-                                    <img
+                                    <Image
                                         src={data.icon}
                                         alt={data.title}
                                         width={35}
