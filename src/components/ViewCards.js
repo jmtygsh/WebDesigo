@@ -41,7 +41,7 @@ export const ViewCards = ({ data }) => {
             }, 0) // Animate card and button simultaneously
                 .to(button, {
                     opacity: 1,
-                    duration: 0.5,
+                    duration: 1,
                     ease: "power1.out",
                 }, 0);
 

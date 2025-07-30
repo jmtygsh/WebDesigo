@@ -1,17 +1,44 @@
-import React from 'react';
+import { React, useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP);
 
 export const Testimonials = ({ data }) => {
     if (!data || data.length === 0 || !Array.isArray(data)) return null;
 
+    const marqueeRef = useRef(null);
+
+    useGSAP(() => {
+        const container = marqueeRef.current;
+
+        if (!container) return;
+
+        const totalHeight = container.scrollHeight / 2;
+
+        gsap.set(container, { y: 0 });
+
+        gsap.to(container, {
+            y: -totalHeight,
+            duration: 50,
+            ease: "none",
+            repeat: -1,
+
+        });
+    }, { scope: marqueeRef });
+
+
     return (
-        <div>
-            <div className='columns-1 sm:columns-2 lg:columns-3 gap-5 max-w-6xl mx-auto p-4'
+        <div className="h-dvh">
+            <div ref={marqueeRef} className='columns-1 sm:columns-2 lg:columns-3 gap-5 max-w-6xl mx-auto p-4 '
                 style={{
-                    maskImage: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
+                    maskImage: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
                 }}
             >
-                {data.map((item) => (
-                    <div key={item.id} className='relative bg-blue-100/5 border border-blue-500/20 p-8 rounded-2xl backdrop-blur-md shadow-2xl overflow-hidden mb-5 break-inside-avoid-column'>
+                {data.concat(data).map((item, index) => (
+                    <div key={index} className='relative bg-blue-100/5 border border-blue-500/20 p-8 rounded-2xl backdrop-blur-md shadow-2xl overflow-hidden mb-5 break-inside-avoid-column 
+                    transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/15 group 
+                    '>
 
                         <div className='relative z-20 flex items-center gap-4 mb-6'>
                             <div className='relative'>
@@ -52,7 +79,6 @@ export const Testimonials = ({ data }) => {
                 ))}
 
             </div>
-
         </div>
     );
 };

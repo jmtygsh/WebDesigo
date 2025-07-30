@@ -20,12 +20,16 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { SeamlessService } from "@/components/SeamlessService";
 import { Count } from "@/components/Count";
 import { Testimonials } from "@/components/Testimonials";
+import { FAQs } from "@/components/FAQs";
+import { StartProjectSection } from "@/components/StartProjectSection";
+import { Footer } from "@/components/Footer";
+
 
 import {
   images, features, whyus, ourapproach,
   toolWeUse, toolWeUseDetails, projectList, serviceCards,
   seamlessLoopService, countNumber, trustedByLeadingBrands,
-  testimonials
+  testimonials, faqData
 } from '@/data/index';
 
 
@@ -57,11 +61,12 @@ export default function Home() {
         <HeroSection />
       </section>
 
-      <section className="overflow-hidden mt-10"
+      <section className="overflow-hidden mt-10 relative"
         style={{
           maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
         }}
       >
+  
         <SeamlessLoop icons={images} />
       </section>
 
@@ -219,6 +224,8 @@ export default function Home() {
         >
 
           <SeamlessService data={seamlessLoopService} brd />
+
+
         </div>
       </section>
 
@@ -250,7 +257,7 @@ export default function Home() {
       </section>
 
 
-      <section className="mt-50 flex flex-col justify-center items-center mb-50">
+      <section className="mt-50 flex flex-col justify-center items-center">
         <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">
           Client Success Stories
         </h3>
@@ -258,11 +265,36 @@ export default function Home() {
 
         <div className="mt-10"
           style={{
-            maskImage: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
-          }}>
+            maskImage: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
+          }}
+        >
           < Testimonials data={testimonials} />
         </div>
-       
+
+      </section>
+
+
+      <section className="mt-50 flex flex-col justify-center items-center">
+        <Badge text="FAQ" />
+        <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">
+          Frequently Asked Questions
+        </h3>
+        <p className="z-2 text-slate-400 mt-1">
+          Answers to common questions about our services, processes, and what sets us apart.
+        </p>
+
+        <div className="mt-10">
+          <FAQs data={faqData} />
+        </div>
+
+      </section>
+
+      <section className="mt-50 max-w-6xl m-auto shadow-[0_0_15px_rgba(59,130,246,0.4),0_0_30px_rgba(59,130,246,0.2)] rounded-2xl mb-50">
+        <StartProjectSection />
+      </section>
+
+      <section className="mt-50">
+        <Footer />
       </section>
     </div>
   );

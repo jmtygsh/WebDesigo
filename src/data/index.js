@@ -1,3 +1,89 @@
+export const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Works", href: "/our-works" },
+    { name: "Hire", href: "/timeline" },
+    { name: "About", href: "/waitlist" },
+
+]
+
+export const ourService = [
+    {
+        id: 1,
+        title: "Branding",
+        url: "/"
+    },
+    {
+        id: 2,
+        title: "Content Writing",
+        url: "/"
+    },
+    {
+        id: 3,
+        title: "Logo Design",
+        url: "/"
+    },
+    {
+        id: 4,
+        title: "Packaging Design",
+        url: "/"
+    },
+    {
+        id: 5,
+        title: "SEO",
+        url: "/"
+    },
+    {
+        id: 6,
+        title: "Social Post Design",
+        url: "/"
+    }
+
+]
+
+export const ourExpertise = [
+    {
+        id: 1,
+        title: "Web Design",
+        url: "/"
+    },
+    {
+        id: 2,
+        title: "Web Development",
+        url: "/"
+    },
+]
+
+
+// social media 
+
+import { FaLinkedinIn, FaSquareXTwitter, FaInstagram } from 'react-icons/fa6'; // Import icons here
+
+export const socialLinks = [
+    {
+        id: 1,
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/company/yourcompany/", // Replace with actual LinkedIn URL
+        icon: FaLinkedinIn,
+        hoverClass: "hover:bg-blue-600 hover:text-white"
+    },
+    {
+        id: 2,
+        name: "X (formerly Twitter)",
+        href: "https://x.com/yourcompany", // Replace with actual X (Twitter) URL
+        icon: FaSquareXTwitter,
+        hoverClass: "hover:bg-white hover:text-black"
+    },
+    {
+        id: 3,
+        name: "Instagram",
+        href: "https://www.instagram.com/yourcompany/", // Replace with actual Instagram URL
+        icon: FaInstagram,
+        hoverClass: "hover:bg-pink-600 hover:text-white"
+    }
+];
+
+// images 
 import { FaStar, FaRocket, FaPaintBrush, FaCode, FaBolt, FaSearch } from "react-icons/fa";
 
 export const images = [
@@ -8,6 +94,9 @@ export const images = [
     { src: "/assets/imgs/demoWebsites/4.png", alt: "Website Demo 4", width: 456, height: 307 },
     { src: "/assets/imgs/demoWebsites/mob2.png", alt: "Website Mob Demo 2", width: 162, height: 307 },
 ];
+
+
+// end images 
 
 export const features = [
     {
@@ -366,51 +455,80 @@ export const testimonials = [
     },
     {
         id: 4,
-    
+
         name: "Noah Patel",
         username: "@noahP",
         comment: "Top-notch web development.",
     },
     {
         id: 5,
- 
+
         name: "Isabella Garcia",
         username: "@bellaG",
         comment: "From initial concept to final launch, Webdesigo provided comprehensive website solutions. Their attention to detail in both design and functionality was outstanding, making our online presence truly shine.",
     },
     {
         id: 6,
-  
+
         name: "Mason Kim",
         username: "@masonK",
         comment: "Great website support.",
     },
     {
         id: 7,
-     
+
         name: "Charlotte White",
         username: "@charlotteW",
         comment: "Webdesigo's development team is incredibly skilled. They built a custom feature for our e-commerce site that exceeded our expectations, improving user experience and conversion rates dramatically. Highly recommend their technical prowess!",
     },
     {
         id: 8,
-   
+
         name: "Ethan Brown",
         username: "@ethanB",
         comment: "Fantastic design work!",
     },
     {
         id: 9,
-       
+
         name: "Amelia Jones",
         username: "@ameliaJ",
         comment: "Our website's performance has never been better thanks to Webdesigo's ongoing maintenance and optimization services. They are proactive and always ensure our site is running smoothly and securely.",
     },
     {
         id: 10,
-     
+
         name: "Lucas Davis",
         username: "@lucasD",
         comment: "Highly recommend their services!",
     },
+];
+
+
+export const faqData = [
+    {
+        id: 1,
+        question: "What is your return policy?",
+        answer: "We offer a 30-day return policy on all products. Items must be in their original condition with all tags and packaging intact. Refunds are processed within 5-7 business days."
+    },
+    {
+        id: 2,
+        question: "How long does shipping take?",
+        answer: "Standard shipping typically takes 5-7 business days within the domestic region. Expedited shipping options are available at checkout for an additional fee."
+    },
+    {
+        id: 3,
+        question: "Do you offer international shipping?",
+        answer: "Yes, we do! International shipping times and costs vary depending on the destination. You can get an estimate by entering your address at checkout."
+    },
+    {
+        id: 4,
+        question: "Can I change or cancel my order?",
+        answer: "If your order has not yet been shipped, you may be able to change or cancel it. Please contact our support team immediately with your order number to see what options are available."
+    },
+    {
+        id: 5,
+        question: "How do I track my order?",
+        answer: "Once your order ships, you will receive an email with a tracking number and a link to the carrier's website. You can also log into your account to check the status of your order at any time."
+    }
 ];
