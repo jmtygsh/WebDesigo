@@ -1,11 +1,12 @@
 import { React, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Image from 'next/image';
 
 gsap.registerPlugin(useGSAP);
 
 export const Testimonials = ({ data }) => {
-    if (!data || data.length === 0 || !Array.isArray(data)) return null;
+
 
     const marqueeRef = useRef(null);
 
@@ -27,6 +28,7 @@ export const Testimonials = ({ data }) => {
         });
     }, { scope: marqueeRef });
 
+    if (!data || data.length === 0 || !Array.isArray(data)) return null;
 
     return (
         <div className="h-dvh">
@@ -43,7 +45,7 @@ export const Testimonials = ({ data }) => {
                         <div className='relative z-20 flex items-center gap-4 mb-6'>
                             <div className='relative'>
                                 {item.src ? (
-                                    <img
+                                    <Image
                                         src={item.src}
                                         width={60}
                                         height={60}
@@ -68,9 +70,9 @@ export const Testimonials = ({ data }) => {
                             </div>
                         </div>
                         <p className='relative z-20 text-lg leading-relaxed text-zinc-300 font-light italic'>
-                            <span className="text-2xl text-purple-400 font-bold mr-2 align-middle">"</span>
+                            <span className="text-2xl text-purple-400 font-bold mr-2 align-middle">&quot;</span>
                             {item.comment}
-                            <span className="text-2xl text-purple-400 font-bold ml-2 align-middle">"</span>
+                            <span className="text-2xl text-purple-400 font-bold ml-2 align-middle">&quot;</span>
                         </p>
                         <div className='relative z-20 flex justify-end mt-6'>
                             <div className='w-12 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full'></div>

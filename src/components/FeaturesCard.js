@@ -1,5 +1,6 @@
 import React from 'react';
 import { BiCheckCircle } from "react-icons/bi";
+import Image from 'next/image';
 
 export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
 

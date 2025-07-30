@@ -10,9 +10,6 @@ gsap.registerPlugin(useGSAP);
 
 export const SeamlessLoop = ({ icons, rmborder }) => {
 
-
-    if (!icons) return null;
-
     const marqueeRef = useRef(null);
 
     useGSAP(() => {
@@ -43,6 +40,10 @@ export const SeamlessLoop = ({ icons, rmborder }) => {
             }
         );
     }, { scope: marqueeRef }); // Pass marqueeRef as the scope for useGSAP
+
+
+    if (!icons) return null;
+
 
     return (
         <div ref={marqueeRef} className={`flex gap-5 w-max overflow-hidden`}>

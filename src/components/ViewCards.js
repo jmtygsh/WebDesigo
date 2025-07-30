@@ -9,7 +9,7 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP);
 
 export const ViewCards = ({ data }) => {
-    if (!data || data.length === 0) return null;
+
 
     // Use a single ref to hold the container of all cards
     // GSAP can then target children within this container
@@ -45,7 +45,7 @@ export const ViewCards = ({ data }) => {
                     ease: "power1.out",
                 }, 0);
 
-      
+
             // Add event listeners
             const handleMouseEnter = () => tl.play();
             const handleMouseLeave = () => tl.reverse();
@@ -63,6 +63,8 @@ export const ViewCards = ({ data }) => {
         });
 
     }, [data]); // Re-run effect if data changes
+
+    if (!data || data.length === 0) return null;
 
     return (
         <div className="grid grid-cols-2 max-w-6xl gap-6" ref={containerRef}>

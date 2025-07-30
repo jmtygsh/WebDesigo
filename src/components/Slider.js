@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // Your Slider component will now be wrapped with forwardRef
 export const Slider = forwardRef(({ datas }, ref) => { // Receive 'ref' as the second argument
-    if (!datas || datas.length === 0) return null;
+
 
     // Create a local ref to hold the Swiper instance
     const swiperInstanceRef = useRef(null);
@@ -30,6 +30,10 @@ export const Slider = forwardRef(({ datas }, ref) => { // Receive 'ref' as the s
         // getSwiper: () => swiperInstanceRef.current, // To get the raw Swiper instance
     }));
 
+
+    if (!datas || datas.length === 0) return null;
+
+    
     return (
         <div className="relative px-5 mt-5"
             style={{
@@ -95,3 +99,7 @@ export const Slider = forwardRef(({ datas }, ref) => { // Receive 'ref' as the s
         </div>
     );
 });
+
+
+// Add this line after your component definition
+Slider.displayName = 'Slider'; 

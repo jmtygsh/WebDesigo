@@ -1,18 +1,18 @@
 import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from "gsap";
+import Image from 'next/image';
 
 // Register the GSAP plugin for React to make sure it's ready to use.
 gsap.registerPlugin(useGSAP);
 
 export const SeamlessService = ({ data, brd }) => {
 
-    // If there's no data or it's not a proper list, don't show anything.
-    if (!data || !Array.isArray(data) || data.length === 0) return null;
-
     // Create a "reference" (marqueeRef) to connect our JavaScript code to the HTML div
     // that holds all our scrolling items.
     const marqueeRef = useRef(null);
+
+
 
     // useGSAP is a special hook that runs our animation code when the component appears
     // or when its dependencies (like 'data') change.
@@ -68,6 +68,10 @@ export const SeamlessService = ({ data, brd }) => {
         dependencies: [data] // Re-run the animation setup if the 'data' list changes.
     });
 
+
+    // If there's no data or it's not a proper list, don't show anything.
+    if (!data || !Array.isArray(data) || data.length === 0) return null;
+
     return (
         // This outer div acts as a window. Anything that scrolls out of it will be hidden.
         <div className='overflow-hidden w-full h-15'>
@@ -89,7 +93,7 @@ export const SeamlessService = ({ data, brd }) => {
                         className={`flex gap-3 items-center text-secondary  ${brd ? ('border border-[#171d45]  px-4 py-2 rounded-full flex-shrink-0') : ('')} `}
                     >
                         {/* Display the icon image for the item. */}
-                        <img src={item.icon} width={item.w} height={item.h} alt={item.title} draggable="false" />
+                        <Image src={item.icon} width={item.w} height={item.h} alt={item.title} draggable="false" />
                         {/* Display the title of the item. */}
                         {item.title ? (<h4>{item.title}</h4>) : ('')}
                     </div>

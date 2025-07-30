@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "@/components/Button";
-
+import Image from 'next/image';
 
 export const ServiceCard = ({ data }) => {
 
@@ -28,7 +28,7 @@ export const ServiceCard = ({ data }) => {
                     <ul className="mt-5 space-y-5">
                         {item.features && item.features.map((feature, index) => (
                             <li key={index} className="flex items-center gap-2">
-                                <img src="/assets/imgs/ui/tick-li.svg" width={20} height={20} alt="tick icon" />
+                                <Image src="/assets/imgs/ui/tick-li.svg" width={20} height={20} alt="tick icon" />
                                 {feature}
                             </li>
                         ))}
