@@ -24,7 +24,7 @@ import { Count } from "@/components/Count";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQs } from "@/components/FAQs";
 import { StartProjectSection } from "@/components/StartProjectSection";
-
+import { SeamlessLogo } from "@/components/SeamlessLogo";
 
 
 import {
@@ -118,8 +118,7 @@ export const Homepage = () => {
             x: -100,
             opacity: 0,
             duration: 2,
-            ease: "expo.in",
-
+            ease: "power1.inOut",
             scrollTrigger: {
                 trigger: featuresContainerRef.current,
                 start: '0% 100%',
@@ -554,7 +553,7 @@ export const Homepage = () => {
                                 WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
                             }}
                         >
-                            <SeamlessService data={trustedByLeadingBrands} />
+                            <SeamlessLogo data={trustedByLeadingBrands} />
                         </div>
                     </div>
                 </div>

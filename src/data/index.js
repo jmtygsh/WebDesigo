@@ -403,31 +403,26 @@ export const trustedByLeadingBrands = [
     {
         id: 1,
         icon: "/assets/imgs/trustedCompany/c1.svg",
-        w: 160,
-        h: 160,
+        title: "trustedCompany",
     },
     {
         id: 2,
         icon: "/assets/imgs/trustedCompany/c2.svg",
-        w: 160,
-        h: 160,
+        title: "trustedCompany",
     },
     {
         id: 3,
         icon: "/assets/imgs/trustedCompany/c3.svg",
-        w: 160,
-        h: 160,
+        title: "trustedCompany",
     },
     {
         id: 4,
         icon: "/assets/imgs/trustedCompany/c4.svg",
-        w: 160,
-        h: 160,
+        title: "trustedCompany",
     }, {
         id: 5,
         icon: "/assets/imgs/trustedCompany/c5.svg",
-        w: 160,
-        h: 160,
+        title: "trustedCompany",
     },
 
 ]
