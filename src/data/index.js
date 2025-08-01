@@ -55,6 +55,8 @@ export const ourExpertise = [
 ]
 
 
+
+
 // social media 
 
 import { FaLinkedinIn, FaSquareXTwitter, FaInstagram } from 'react-icons/fa6'; // Import icons here

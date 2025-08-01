@@ -5,15 +5,32 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { navItems } from "@/data/index";
 import { Button } from "@/components/Button";
+import { gsap } from 'gsap';
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
+gsap.registerPlugin(useGSAP);
+
 
 export const Header = () => {
 
     const pathname = usePathname(); // Get the current path
+    const headerRef = useRef(null);
+
+    useGSAP(() => {
+        gsap.from(headerRef.current, {
+            y: -50,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power1.out",
+        })
+
+    })
 
     if (!navItems) return null;
 
     return (
-        <nav className="flex justify-between items-center px-6 md:px-10 py-4 fixed left-0 right-0 z-99">
+        <nav ref={headerRef} className="flex justify-between items-center px-6 md:px-10 py-4 fixed left-0 right-0 z-99">
             <span className="text-2xl font-bold ">WebDesigo</span>
 
             {/* Desktop Navigation */}

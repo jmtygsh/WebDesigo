@@ -70,7 +70,7 @@ export const SeamlessService = ({ data, brd }) => {
 
 
     // If there's no data or it's not a proper list, don't show anything.
-    if (!data || !Array.isArray(data) || data.length === 0) return null;
+    if (!data || data.length === 0) return null;
 
     return (
         // This outer div acts as a window. Anything that scrolls out of it will be hidden.
@@ -93,7 +93,7 @@ export const SeamlessService = ({ data, brd }) => {
                         className={`flex gap-3 items-center text-secondary  ${brd ? ('border border-[#171d45]  px-4 py-2 rounded-full flex-shrink-0') : ('')} `}
                     >
                         {/* Display the icon image for the item. */}
-                        <Image src={item.icon} width={item.w} height={item.h} alt={item.title} draggable="false" />
+                        <Image src={item.icon} width={item.w || 160} height={item.h || 160} alt={item.title || "Images"} draggable="false" />
                         {/* Display the title of the item. */}
                         {item.title ? (<h4>{item.title}</h4>) : ('')}
                     </div>
