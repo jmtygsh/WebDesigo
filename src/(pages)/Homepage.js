@@ -356,7 +356,7 @@ export const Homepage = () => {
                 <SeamlessLoop icons={images} />
             </section>
 
-            <section className="mt-20" ref={featuresContainerRef}>
+            <section className="mt-20 relative" ref={featuresContainerRef}>
                 <div className="flex justify-between items-center gap-3 max-w-3/4 m-auto">
                     <div className="flex-1 h-[1px] bg-gradient-to-l from-[#171d45] from-[28.8%] to-[#171d4500]"></div>
                     <h4 className="text-slate-400">See How We Can Help Your Brand</h4>
@@ -368,67 +368,78 @@ export const Homepage = () => {
                 </div>
             </section>
 
-            <section className="mt-20 overflow-hidden" ref={promiseContainerRef}>
-                <div className="relative text-center rounded-xl h-dvh flex flex-col justify-center items-center
+            <section className="mt-20 relative overflow-hidden" ref={promiseContainerRef}>
+                <div className="relative text-center rounded-none lg:rounded-xl h-dvh flex flex-col justify-center items-center
         border backdrop-blur-sm border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.4),0_0_30px_rgba(59,130,246,0.2)]"
                 >
                     <Badge text="Our Promise" />
 
-                    <h2 className="z-2 text-5xl/15 font-bold max-w-4xl mx-auto" ref={promiseHeadingRef}>
+                    <h2 className="z-2 text-2xl lg:text-5xl/15 font-bold max-w-[80%] lg:max-w-4xl mx-auto" ref={promiseHeadingRef}>
                         Our mission is to design websites that attract and engage customers.
                     </h2>
-                    <p className="z-2 text-slate-400 mt-5" ref={promiseTextRef}>
+                    <p className="z-2 text-slate-400 mt-5 max-w-[80%] md:max-w-full" ref={promiseTextRef}>
                         However, we approach things a bit differently around here.
                     </p>
-                    <VideoBackground url="/assets/videos/intro.mp4" classes="rounded-2xl" />
+                    <VideoBackground url="/assets/videos/intro.mp4" classes="rounded-none lg:rounded-xl" />
                 </div>
             </section>
 
-            {/* i need here top aniamtion canavas  */}
-            <section className="mt-50 h-dvh" ref={whyUsContainerRef}>
-                <div className="flex flex-col justify-center items-center text-center max-w-3xl mx-auto">
-                    <h3 className="text-4xl/15 font-bold" ref={whyUsContainerHeading}>
+            <section className="mt-30 md:mt-50 min-h-dvh relative flex flex-col justify-center items-center"
+                ref={whyUsContainerRef}
+            >
+                <div className="text-center max-w-3xl mx-auto"> {/* Added px-4 for side padding on mobile */}
+                    <h3 className="text-2xl lg:text-4xl/15 font-bold" ref={whyUsContainerHeading}>
                         <span ref={whyUSContainerSpan1Ref} className="inline-block">Why We,</span> <span ref={whyUSContainerSpan2Ref} className="text-blue-600 inline-block">Stands Out</span>
                     </h3>
-                    <p className="text-slate-400 mt-5" ref={whyUsContainerText}>
+                    <p className="text-slate-400 mt-2 max-w-[90%] md:max-w-full mx-auto text-center" ref={whyUsContainerText}>
                         Experience the perfect blend of creativity, cutting-edge technology, and client-first strategies.
                         We don’t just build websites — we craft digital experiences that inspire trust and drive results.
                     </p>
                 </div>
-                <div className=" w-full h-72 mt-10 rounded flex gap-5 flex-col" ref={whyUsContainerCard}>
-                    <FeaturesCard datas={whyus} classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" />
+                <div className="w-full max-w-7xl mx-auto  mt-10" ref={whyUsContainerCard}>
+                    <FeaturesCard datas={whyus} classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" />
                 </div>
             </section>
 
-
-            {/* i need here top aniamtion canavas  */}
-            <section className="mt-50" ref={ourApproachContainerRef} >
+            <section className="mt-30 md:mt-50" ref={ourApproachContainerRef}>
                 <div className="flex justify-center items-center flex-col">
-                    <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto" ref={ourApproachContainerRefHeading}>Our Approach</h3>
-                    <p className="z-2 text-slate-400 mt-1"
+                    <h3 className="z-2 text-2xl lg:text-4xl/15 font-bold max-w-4xl mx-auto" ref={ourApproachContainerRefHeading}>Our Approach</h3>
+                    <p className="text-slate-400 mt-2 max-w-[90%] md:max-w-full mx-auto text-center"
                         ref={ourApproachContainerRefText}>
                         Explore our streamlined approach to creating bespoke websites that align with your goals.
                     </p>
                     <div className="mt-10" ref={ourApproachContainerRefCard}>
-                        <FeaturesCard icons='true' style='true' datas={ourapproach} steps classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2" />
+                        <FeaturesCard icons='true' style='true' datas={ourapproach} steps classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5" />
                     </div>
                 </div>
 
             </section>
 
-            <section className="mt-50 flex justify-between gap-10 items-center max-w-6xl m-auto" ref={ourStoryContainerRef}>
+            <section className="mt-30 md:mt-50 flex flex-col max-w-[90%] lg:flex-row justify-between gap-10 items-center lg:max-w-6xl m-auto " ref={ourStoryContainerRef}>
 
                 <div className="flex-1 flex items-start flex-col" ref={ourStoryContainerRefLeft}>
                     <Badge text="About Us" />
-                    <h3 className="z-2 text-4xl/15 font-bold mt-2">
+                    <h3 className="z-2 text-2xl lg:text-4xl/15 font-bold mt-2">
                         Our Story & Mission
                     </h3>
-                    <p className="z-2 text-slate-400 mt-1">
-                        Discover who we are and our mission at WebDesigo. We are a passionate team of creative professionals dedicated to crafting exceptional web design solutions. Our mission is to empower businesses with innovative websites that not only captivate but also drive results.
+                    <p className="z-2 text-slate-400 mt-2">
+                        Discover who we are and our mission at WebDesigo.
+
+                        <br className="md:hidden" />
+                        <br className="md:hidden" />
+                        We are a passionate team of creative professionals dedicated to crafting exceptional web design solutions.
+
+                        <br className="md:hidden" />
+                        <br className="md:hidden" /> {/* This break also only appears on small screens */}
+
+                        Our mission is to empower businesses with innovative websites that not only captivate but also drive results.
                     </p>
                     <div className="mt-5 flex flex-wrap gap-5 items-center" ref={ourStoryContainerRefBtn}>
-                        <Button url="/contact-us" text="Contact Us" />
-                        <Button url="/contact-us" text="View Projects" classes />
+                        <Button className="mt-20" url="/contact-us" text="Contact Us" />
+                        <div className="hidden lg:block">
+                            <Button url="/contact-us" text="View Projects" classes />
+                        </div>
+
                     </div>
                 </div>
 
@@ -443,30 +454,25 @@ export const Homepage = () => {
                 />
             </section>
 
-            <section className="mt-50 overflow-hidden" ref={toolContainerRef}>
-                <div className="flex flex-col items-start max-w-6xl m-auto">
-
+            <section className="mt-30 md:mt-50 overflow-hidden" ref={toolContainerRef}>
+                <div className="flex flex-col items-start max-w-[90%] lg:max-w-6xl m-auto">
                     <div className="flex justify-between items-center w-full">
                         <div className="max-w-2xl">
-                            <h3 className="z-2 text-4xl/15 font-bold w-auto" ref={toolContainerRefHeading}>
+                            <h3 className="z-2 text-2xl lg:text-4xl/15 font-bold w-auto" ref={toolContainerRefHeading}>
                                 Tools We Utilize for Excellence
                             </h3>
                             <p className="z-2 text-slate-400 mt-1" ref={toolContainerRefText}>
                                 Discover the advanced tools and technologies we leverage to create cutting-edge websites.
                             </p>
                         </div>
-
-
-                        <div className="flex gap-4" ref={toolContainerRefBtn}>
+                        <div className="hidden md:flex gap-4" ref={toolContainerRefBtn}>
                             <ArrowNavigation handleClick={handlePrevClick} />
                             <ArrowNavigation handleClick={handleNextClick} right />
                         </div>
                     </div>
-
-
                 </div>
 
-                <div className="mt-10"
+                <div className="lg:mt-10"
                     style={{
                         maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
                     }}
@@ -474,13 +480,19 @@ export const Homepage = () => {
                 >
                     <Slider ref={sliderRef} datas={toolWeUseDetails} />
                 </div>
-            </section >
+
+                <div className="flex justify-end lg:hidden gap-4 max-w-[90%] m-auto mt-5"
+                    ref={toolContainerRefBtn}>
+                    <ArrowNavigation handleClick={handlePrevClick} />
+                    <ArrowNavigation handleClick={handleNextClick} right />
+                </div>
+            </section>
 
 
-            <section className="mt-50" ref={coreServiceRef}>
+            <section className="mt-30 md:mt-50" ref={coreServiceRef}>
                 <div className="flex justify-center items-center flex-col">
-                    <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto" ref={coreServiceRefHeading}>Explore Our Core Services</h3>
-                    <p className="z-2 text-slate-400 mt-1" ref={coreServiceRefText}>
+                    <h3 className="z-2 text-2xl lg:text-4xl/15 font-bold max-w-4xl mx-auto" ref={coreServiceRefHeading}>Explore Our Core Services</h3>
+                    <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center" ref={coreServiceRefText}>
                         Discover our comprehensive range of services tailored to enhance your digital presence.
                     </p>
 
@@ -511,12 +523,12 @@ export const Homepage = () => {
             </section>
 
 
-            <section className="mt-50" ref={recentProjectContainer}>
+            <section className="mt-30 md:mt-50 max-w-[90%] m-auto lg:max-w-full" ref={recentProjectContainer}>
                 <div className="flex justify-center items-center flex-col">
-                    <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto" ref={recentProjectContainerHeading}>
+                    <h3 className="z-2 text-2xl lg:text-4xl/15 font-bold max-w-4xl mx-auto" ref={recentProjectContainerHeading}>
                         Explore Our Recent Projects
                     </h3>
-                    <p className="z-2 text-slate-400 mt-1" ref={recentProjectContainerText}>
+                    <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center" ref={recentProjectContainerText}>
                         Browse through our portfolio showcasing diverse, innovative web design projects and client successes.
                     </p>
 
@@ -532,22 +544,23 @@ export const Homepage = () => {
 
 
 
-            <section className="mt-50 mb-50 flex justify-between gap-10 items-center max-w-6xl m-auto">
-
-                <div className="flex-1">
+            <section
+                className="mt-30 md:mt-50 flex flex-col-reverse md:flex-row justify-between gap-10 items-center max-w-[90%] md:max-w-6xl mx-auto"
+            >
+                <div className="w-full md:flex-1">
                     <Count data={countNumber} />
                 </div>
 
-                <div className="flex-1 flex items-start flex-col">
+                <div className="w-full md:flex-1 flex items-center md:items-start flex-col text-center md:text-left">
                     <Badge text="Results & Analytics" />
-                    <h3 className="z-2 text-4xl font-bold mt-2">
+                    <h3 className="z-2 text-2xl md:text-4xl font-bold mt-2">
                         Performance Insights and the Analytics Overview
                     </h3>
-
-                    <div className="mt-10">
-                        <h4 className="text-xl text-secondary">Trusted by Leading Brands</h4>
-
-                        <div className="mt-7 max-w-lg m-auto flex"
+                    <div className="mt-5 md:mt-10 w-full">
+                        <h4 className="text-xl text-secondary">
+                            Trusted by Leading Brands</h4>
+                        <div
+                            className="mt-5 md:mt-7 max-w-lg mx-auto flex"
                             style={{
                                 maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
                                 WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
@@ -559,12 +572,11 @@ export const Homepage = () => {
                 </div>
             </section>
 
-
-            <section className="mt-50 flex flex-col justify-center items-center">
-                <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">
+            <section className="mt-30 md:mt-50 flex flex-col justify-center items-center">
+                <h3 className="z-2 text-2xl md:text-4xl/15 font-bold max-w-4xl mx-auto">
                     Client Success Stories
                 </h3>
-                <p className="z-2 text-slate-400 mt-1">Discover what our clients say about their experiences and success working with us.</p>
+                <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center">Discover what our clients say about their experiences and success working with us.</p>
 
                 <div className="mt-10"
                     style={{
@@ -577,12 +589,12 @@ export const Homepage = () => {
             </section>
 
 
-            <section className="mt-50 flex flex-col justify-center items-center">
+            <section className="mt-30 md:mt-50 flex flex-col justify-center items-center">
                 <Badge text="FAQ" />
-                <h3 className="z-2 text-4xl/15 font-bold max-w-4xl mx-auto">
+                <h3 className="mt-3 md:mt-0 z-2 text-2xl md:text-4xl/15 font-bold max-w-4xl mx-auto">
                     Frequently Asked Questions
                 </h3>
-                <p className="z-2 text-slate-400 mt-1">
+                <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center">
                     Answers to common questions about our services, processes, and what sets us apart.
                 </p>
 
@@ -592,7 +604,7 @@ export const Homepage = () => {
 
             </section>
 
-            <section className="mt-50 mb-50 max-w-6xl m-auto shadow-[0_0_15px_rgba(59,130,246,0.4),0_0_30px_rgba(59,130,246,0.2)] rounded-2xl ">
+            <section className="mt-30 md:mt-50 mb-30 md:mb-50 max-w-6xl m-auto shadow-[0_0_15px_rgba(59,130,246,0.4),0_0_30px_rgba(59,130,246,0.2)] rounded-2xl">
                 <StartProjectSection />
             </section>
 

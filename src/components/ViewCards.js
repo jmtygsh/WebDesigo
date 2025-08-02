@@ -67,7 +67,7 @@ export const ViewCards = ({ data }) => {
     if (!data || data.length === 0) return null;
 
     return (
-        <div className="grid grid-cols-2 max-w-6xl gap-6" ref={containerRef}>
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl gap-6" ref={containerRef}>
 
             {
                 data.map((item, i) => (
@@ -97,7 +97,7 @@ export const ViewCards = ({ data }) => {
                         </div>
 
                         <div className="p-5">
-                            <h3 className="text-2xl font-bold w-auto">
+                            <h3 className="text-xl font-normal md:text-2xl md:font-bold w-auto">
                                 {item.title}
                             </h3>
 

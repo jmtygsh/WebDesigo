@@ -22,7 +22,7 @@ export const Count = ({ data }) => {
                         }}
                     />
 
-                    <h4 className="text-5xl font-bold text-center">
+                    <h4 className="text-2xl md:text-5xl md:font-bold text-center">
                         {item.count}{item.sign}
                     </h4>
                     <p className="text-slate-400 mt-1 text-center">{item.des}</p>

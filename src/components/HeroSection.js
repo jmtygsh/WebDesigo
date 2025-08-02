@@ -26,12 +26,12 @@ export const HeroSection = () => {
     }, { scope: container });
 
     return (
-        <div ref={container} className="max-w-3/6 text-center space-y-5 flex flex-col items-center z-2">
+        <div ref={container} className="max-w-6xl lg:max-w-3/6 text-center space-y-5 flex flex-col items-center z-2">
 
             <Link
                 ref={heroLink}
                 href="/"
-                className="py-3 px-5 rounded-full bg-[#1d2033] drop-shadow-md flex gap-2"
+                className="py-2 text-sm px-5 rounded-full bg-[#1d2033] drop-shadow-md hidden lg:flex gap-2"
             >
                 <span className="text-secondary">
                     We Design websites that matter, user’s can’t resist
@@ -41,7 +41,7 @@ export const HeroSection = () => {
                 </span>
             </Link>
 
-            <h1 ref={heroHeading} className="text-5xl/15 font-bold">
+            <h1 ref={heroHeading} className="text-2xl lg:text-5xl/15 font-bold">
                 Design That Powers Real Business Growth
             </h1>
 

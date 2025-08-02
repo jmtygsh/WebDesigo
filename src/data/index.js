@@ -1,11 +1,29 @@
-export const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Works", href: "/our-works" },
-    { name: "Hire", href: "/timeline" },
-    { name: "About", href: "/waitlist" },
+// Location: @/data/index.ts
 
-]
+import {
+    FiHome,
+    FiGrid,
+    FiBriefcase,
+    FiSend,
+    FiUser,
+    FiMail,
+} from "react-icons/fi";
+
+// Main navigation items for the header
+export const navItems = [
+    { name: "Home", href: "/", icon: <FiHome /> },
+    { name: "Services", href: "/services", icon: <FiGrid /> },
+    { name: "Works", href: "/our-works", icon: <FiBriefcase /> },
+    { name: "Hire", href: "/timeline", icon: <FiSend /> },
+    { name: "About", href: "/waitlist", icon: <FiUser /> },
+];
+
+// Separate item for the "Contact Us" button/link for distinct styling
+export const contactItem = {
+    name: "Contact",
+    href: "/contact-us",
+    icon: <FiMail />
+};
 
 export const ourService = [
     {
@@ -54,11 +72,7 @@ export const ourExpertise = [
     },
 ]
 
-
-
-
 // social media 
-
 import { FaLinkedinIn, FaSquareXTwitter, FaInstagram } from 'react-icons/fa6'; // Import icons here
 
 export const socialLinks = [
@@ -99,23 +113,22 @@ export const images = [
 
 
 // end images 
-
 export const features = [
     {
         id: 1,
-        icon: <FaPaintBrush className="w-6 h-6 text-white" />,
+        icon: <FaPaintBrush className="w-4 h-4 md:w-6 md:h-6 text-white" />,
         title: "Custom Designs",
         description: "Tailored websites meticulously crafted to reflect your brand."
     },
     {
         id: 2,
-        icon: <FaBolt className="w-6 h-6 text-white" />,
+        icon: <FaBolt className="w-4 h-4 md:w-6 md:h-6 text-white" />,
         title: "Fast Performance",
         description: "Optimized for lightning-fast speed to enhance user experience."
     },
     {
         id: 3,
-        icon: <FaSearch className="w-6 h-6 text-white" />,
+        icon: <FaSearch className="w-4 h-4 md:w-6 md:h-6 text-white" />,
         title: "SEO Friendly",
         description: "Designed to improve SEO and increase visibility effortlessly."
     }
@@ -163,25 +176,25 @@ export const whyus = [
 export const ourapproach = [
     {
         id: 1,
-        icon: <FaStar className="w-6 h-6 text-white" />,
+        icon: <FaStar className="w-4 h-4 md:w-6 md:h-6 text-white" />,
         title: "Discovery Phase",
         description: "Understanding your brand, objectives, and target audience to define project goals."
     },
     {
         id: 2,
-        icon: <FaRocket className="w-6 h-6 text-white" />,
+        icon: <FaRocket className="w-4 h-4 md:w-6 md:h-6 text-white" />,
         title: "Design Concept",
         description: "Creating initial design concepts based on insights gathered during the discovery phase."
     },
     {
         id: 3,
-        icon: <FaPaintBrush className="w-6 h-6 text-white" />,
+        icon: <FaPaintBrush className="w-4 h-4 md:w-6 md:h-6 text-white" />,
         title: "Development & Testing",
         description: "Building and refining the website, ensuring functionality and compatibility across devices."
     },
     {
         id: 4,
-        icon: <FaCode className="w-6 h-6 text-white" />,
+        icon: <FaCode className="w-4 h-4 md:w-6 md:h-6 text-white" />,
         title: "Launch & Support",
         description: "Deploying the finalized website and providing ongoing support to ensure long-term success."
     }

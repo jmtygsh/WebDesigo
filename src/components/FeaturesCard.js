@@ -25,6 +25,7 @@ export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
                                         alt={data.title}
                                         width={35}
                                         height={35}
+                                        className='w-6 h-6 lg:w-8 lg:h-8'
                                     />
                                 </div>
                             )}
@@ -46,7 +47,7 @@ export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
 
                             {/* Content */}
                             <div className="relative z-10">
-                                {icons ? (<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center mb-5">
+                                {icons ? (<div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center mb-5">
                                     {data.icon}
                                 </div>) : (
                                     <div></div>
@@ -63,7 +64,7 @@ export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
                                 }
 
 
-                                <h3 className="text-white text-xl font-semibold mb-3">
+                                <h3 className="text-white text-xl lg:font-semibold mb-3">
                                     {data.title}
                                 </h3>
                                 <p className="text-slate-400 text-base leading-relaxed">

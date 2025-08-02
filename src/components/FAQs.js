@@ -12,9 +12,7 @@ export const FAQs = ({ data }) => {
     };
 
     return (
-
-
-        <div className='max-w-4xl mx-auto'>
+        <div className='max-w-[90%] md:max-w-4xl mx-auto'>
             <div className='space-y-6'>
                 {data.map((faq) => (
                     <div
@@ -25,7 +23,7 @@ export const FAQs = ({ data }) => {
                             onClick={() => toggleFAQ(faq.id)}
                             className='flex items-center justify-between w-full p-6 text-left focus:outline-none'
                         >
-                            <h3 className='text-lg font-semibold text-secondary'>
+                            <h3 className='text-base md:text-lg font-semibold text-secondary'>
                                 {faq.question}
                             </h3>
                             <svg

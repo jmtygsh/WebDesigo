@@ -9,17 +9,17 @@ export const ServiceCard = ({ data }) => {
 
     return (
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[90%] md:max-w-full m-auto">
             {data.map((item) => ( // Add parentheses here to implicitly return the JSX
                 <div key={item.id} className="p-8 border-1 border-white/10 rounded-2xl cursor-pointer bg-gradient-to-b from-[#00041f]/20 to-transparent">
-                    <div className="flex justify-between gap-3 items-center mb-5">
-                        <h4 className="text-3xl/15 font-bold">{item.title}</h4>
+                    <div className="flex flex-col md:flex-row justify-between gap-3 items-center mb-5">
+                        <h4 className="text-2xl lg:text-3xl/15 lg:font-bold">{item.title}</h4>
                         {/* Ensure btnUrl and btnText exist before passing to Button */}
                         {item.btnUrl && item.btnText && (
                             <Button url={item.btnUrl} text={item.btnText} classes />
                         )}
                     </div>
-                    <p className="text-secondary mb-5">
+                    <p className="text-secondary mb-5 text-center lg:text-left">
                         {item.description}
                     </p>
 

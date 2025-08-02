@@ -37,21 +37,22 @@ export const StartProjectSection = () => {
     }, { scope: container });
 
     return (
-        <div ref={container} className='relative rounded-2xl bg-[#010417] overflow-hidden'>
-            <div className="relative z-10 mx-auto max-w-6xl text-center h-96 flex flex-col items-center justify-center rounded-xl">
+        <div ref={container} className='relative rounded-none md:rounded-2xl bg-[#010417] overflow-hidden'>
 
-                {/* Heading */}
-                <h2 ref={headingRef} className="mb-4 text-4xl font-bold">
+            <div className="relative z-10 mx-auto max-w-6xl text-center py-16 md:py-24 px-4 flex flex-col items-center justify-center rounded-xl">
+
+                {/* Heading - Already responsive with text sizes */}
+                <h2 ref={headingRef} className="mb-4 text-3xl md:text-4xl font-bold">
                     Start Your Project
                 </h2>
 
-                {/* Paragraph */}
+                {/* Paragraph - Already responsive */}
                 <p ref={paragraphRef} className="mx-auto mb-8 max-w-2xl text-slate-400">
                     Contact us today to start crafting your exceptional and customized website solution.
                 </p>
 
-                {/* Tick Icon List */}
-                <ul className="mb-10 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
+
+                <ul className="mb-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap md:gap-6">
                     {["Customized design", "Ongoing support", "Fast delivery"].map((text, i) => (
                         <li
                             key={i}
@@ -64,18 +65,17 @@ export const StartProjectSection = () => {
                     ))}
                 </ul>
 
-                {/* Button */}
+
                 <div ref={buttonRef}>
                     <Button url="/start-project" text="Start a Project" />
                 </div>
             </div>
 
-            {/* Background Decorative Images */}
-            <div className='absolute top-0 left-0'>
-                <Image src='/assets/imgs/ui/left.png' width={400} height={400} alt='Left' />
+            <div className='absolute top-0 left-0 hidden md:block'>
+                <Image src='/assets/imgs/ui/left.png' width={400} height={400} alt='Left decorative element' />
             </div>
-            <div className='absolute top-0 right-0'>
-                <Image src='/assets/imgs/ui/right.png' width={400} height={400} alt='Right' />
+            <div className='absolute top-0 right-0 hidden md:block'>
+                <Image src='/assets/imgs/ui/right.png' width={400} height={400} alt='Right decorative element' />
             </div>
         </div>
     );
