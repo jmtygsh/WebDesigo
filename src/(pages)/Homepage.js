@@ -55,13 +55,12 @@ export const Homepage = () => {
     };
 
 
-    // ref for the component's container
-    const featuresContainerRef = useRef(null);
+
 
     // promise container 
-    const promiseContainerRef = useRef(null);
     const promiseHeadingRef = useRef(null);
-    const promiseTextRef = useRef(null);
+    const promiseHeadingText = useRef(null);
+
 
     // Why choose us container 
     const whyUsContainerRef = useRef(null);
@@ -69,14 +68,13 @@ export const Homepage = () => {
     const whyUSContainerSpan1Ref = useRef(null);
     const whyUSContainerSpan2Ref = useRef(null);
     const whyUsContainerText = useRef(null);
-    const whyUsContainerCard = useRef(null);
+
 
 
     // ourApproach container 
     const ourApproachContainerRef = useRef(null);
     const ourApproachContainerRefHeading = useRef(null);
     const ourApproachContainerRefText = useRef(null);
-    const ourApproachContainerRefCard = useRef(null);
 
 
     // our story container 
@@ -91,14 +89,14 @@ export const Homepage = () => {
     const toolContainerRefText = useRef(null);
     const toolContainerRefHeading = useRef(null);
     const toolContainerRefBtn = useRef(null);
-    const toolContainerRefSlider = useRef(null);
+
 
 
     // core service cards
     const coreServiceRef = useRef(null);
     const coreServiceRefHeading = useRef(null);
     const coreServiceRefText = useRef(null);
-    const coreServiceRefCard = useRef(null);
+
     const coreServiceRefOtherService = useRef(null);
     const coreServiceRefOtherServiceCard = useRef(null);
 
@@ -108,47 +106,65 @@ export const Homepage = () => {
     const recentProjectContainer = useRef(null);
     const recentProjectContainerHeading = useRef(null);
     const recentProjectContainerText = useRef(null);
-    const recentProjectContainerList = useRef(null);
     const recentProjectContainerBtn = useRef(null);
 
 
+    // performance container 
+    const performanceContainerRef = useRef(null);
+    const performanceContainerHeadingRef = useRef(null);
+    const performanceContainerHeadingTwoRef = useRef(null);
+    const performanceContainerCard = useRef(null);
+
+
+    // client container 
+    const clientContainerRef = useRef(null);
+    const clientContainerHeadingRef = useRef(null);
+    const clientContainerTextRef = useRef(null);
+
+
+    // faq container 
+    const faqContainerRef = useRef(null);
+    const faqContainerHeadingRef = useRef(null);
+    const faqContainerTextRef = useRef(null);
+
+
     useGSAP(() => {
-        // features Container
-        gsap.from(featuresContainerRef.current, {
-            x: -100,
-            opacity: 0,
-            duration: 2,
-            ease: "power1.inOut",
-            scrollTrigger: {
-                trigger: featuresContainerRef.current,
-                start: '0% 100%',
-                end: "100% 50%",
 
-            }
-        })
+        // our promise container 
+        const promiseContainerHeading = promiseHeadingRef.current;
+        const promiseHeaingWrap = promiseContainerHeading?.textContent.split('').map(char => `<span>${char}</span>`);
+        promiseContainerHeading.innerHTML = promiseHeaingWrap.join('');
+        const promiseContainerSpan = gsap.utils.toArray(promiseContainerHeading.children)
 
-        // promise container 
-        const ptl = gsap.timeline({
+        // 1. Create a master timeline and attach the ScrollTrigger to IT.
+        const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: promiseContainerRef.current,
-                start: 'top 80%',
-                toggleActions: 'play none none none',
+                trigger: promiseContainerHeading,
+                start: "100% 100%",
+                end: "100% 40%",
+                scrub: 0.5,
             }
         });
 
-        ptl.from(promiseHeadingRef.current, {
-            y: 100,
+        // 2. Add your FIRST animation to the timeline.
+        // Notice there is NO scrollTrigger or onComplete here. It's controlled by the master timeline.
+        tl.from(promiseContainerSpan, {
+            stagger: 0.2,
+            filter: "blur(10px)",
             opacity: 0,
-            duration: 1,
-            ease: "power2.out",
-        }).from(promiseTextRef.current, {
-            y: 100,
-            opacity: 0,
-            duration: 0.7,
-            ease: "power2.out",
+            scale: 1.2
         });
 
-        // promise container 
+        // 3. Add your SECOND animation to the timeline.
+        // By default, it will start AFTER the first animation completes.
+        tl.from(promiseHeadingText.current, {
+            y: 50,
+            opacity: 0,
+            duration: 1
+        });
+
+
+        // why us container  
         const wtl = gsap.timeline({
             scrollTrigger: {
                 trigger: whyUsContainerRef.current,
@@ -167,20 +183,15 @@ export const Homepage = () => {
         }).from(whyUSContainerSpan2Ref.current, {
             y: 50,
             opacity: 0,
-            duration: 0.7,
+            duration: 1,
             ease: "power2.out",
 
         }).from(whyUsContainerText.current, {
             y: 50,
             opacity: 0,
-            duration: 0.7,
+            duration: 0.5,
             ease: "power2.out",
 
-        }).from(whyUsContainerCard.current, {
-            y: 50,
-            opacity: 0,
-            duration: 0.7,
-            ease: "power2.out",
         })
 
 
@@ -203,11 +214,6 @@ export const Homepage = () => {
             opacity: 0,
             duration: 0.5,
             ease: "power2.out",
-        }).from(ourApproachContainerRefCard.current, {
-            x: 50,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
         })
 
 
@@ -224,17 +230,17 @@ export const Homepage = () => {
             opacity: 0,
             duration: 1,
             ease: "power2.out",
-        }).from(ourStoryContainerRefRight.current, {
-            x: 50,
-            opacity: 0,
-            duration: 1,
-            ease: "power2.out",
         }).from(ourStoryContainerRefBtn.current.children, {
             x: -50,
             opacity: 0,
             duration: 0.5,
             ease: "power2.out",
             stagger: 0.3,
+        }).from(ourStoryContainerRefRight.current, {
+            x: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
         })
 
 
@@ -262,11 +268,6 @@ export const Homepage = () => {
             opacity: 0,
             duration: 0.7,
             ease: "power2.out",
-        }).from(toolContainerRefSlider.current, {
-            y: 50,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
         })
 
 
@@ -288,11 +289,6 @@ export const Homepage = () => {
             opacity: 0,
             duration: 0.7,
             ease: "power2.out",
-        }).from(coreServiceRefCard.current, {
-            x: 50,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
         }).from(coreServiceRefOtherService.current, {
             x: 50,
             opacity: 0,
@@ -304,6 +300,7 @@ export const Homepage = () => {
             duration: 0.8,
             ease: "power2.out",
         })
+
 
 
 
@@ -326,11 +323,6 @@ export const Homepage = () => {
             opacity: 0,
             duration: 0.7,
             ease: "power2.out",
-        }).from(recentProjectContainerList.current, {
-            y: 50,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
         }).from(recentProjectContainerBtn.current, {
             y: 50,
             opacity: 0,
@@ -338,7 +330,88 @@ export const Homepage = () => {
             ease: "power2.out",
         })
 
+
+
+
+        // performance container
+        const ptl = gsap.timeline({
+            scrollTrigger: {
+                trigger: performanceContainerRef.current,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            }
+        })
+
+        ptl.from(performanceContainerHeadingRef.current, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            filter: "blur(2px)",
+        }).from(performanceContainerHeadingTwoRef.current, {
+            y: 50,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.out",
+            filter: "blur(2px)",
+        }).from(performanceContainerCard.current, {
+            y: 50,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.out",
+            filter: "blur(2px)",
+        })
+
+
+        // client container
+        const ctl = gsap.timeline({
+            scrollTrigger: {
+                trigger: clientContainerRef.current,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            }
+        })
+
+        ctl.from(clientContainerHeadingRef.current, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            filter: "blur(2px)",
+        }).from(clientContainerTextRef.current, {
+            y: 50,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.out",
+            filter: "blur(2px)",
+        })
+
+
+        // FAQ container
+        const ftl = gsap.timeline({
+            scrollTrigger: {
+                trigger: faqContainerRef.current,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            }
+        })
+
+        ftl.from(faqContainerHeadingRef.current, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            filter: "blur(2px)",
+        }).from(faqContainerTextRef.current, {
+            y: 50,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.out",
+            filter: "blur(2px)",
+        })
+
     })
+
     return (
         <div className="bg-background min-h-screen text-foreground font-sans relative">
 
@@ -356,35 +429,36 @@ export const Homepage = () => {
                 <SeamlessLoop icons={images} />
             </section>
 
-            <section className="mt-20 relative" ref={featuresContainerRef}>
+            <section className="py-10 relative">
                 <div className="flex justify-between items-center gap-3 max-w-3/4 m-auto">
                     <div className="flex-1 h-[1px] bg-gradient-to-l from-[#171d45] from-[28.8%] to-[#171d4500]"></div>
                     <h4 className="text-slate-400">See How We Can Help Your Brand</h4>
                     <div className="flex-1 h-[1px] bg-gradient-to-r from-[#171d45] from-[28.8%] to-[#171d4500]"></div>
                 </div>
 
-                <div className="mt-5 mb-30">
+                <div className="mt-5">
                     <FeaturesCard icons='true' style='true' datas={features} classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" />
                 </div>
             </section>
 
-            <section className="mt-20 relative overflow-hidden" ref={promiseContainerRef}>
-                <div className="relative text-center rounded-none lg:rounded-xl h-dvh flex flex-col justify-center items-center
-        border backdrop-blur-sm border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.4),0_0_30px_rgba(59,130,246,0.2)]"
+            <section className="py-16 md:py-20 relative overflow-hidden" >
+                <div className="relative text-center rounded-none lg:rounded-xl h-dvh flex flex-col 
+                justify-center items-center border backdrop-blur-sm 
+                border-blue-500/40 
+                shadow-[0_0_15px_rgba(59,130,246,0.4),0_0_30px_rgba(59,130,246,0.2)]"
                 >
                     <Badge text="Our Promise" />
-
                     <h2 className="z-2 text-2xl lg:text-5xl/15 font-bold max-w-[80%] lg:max-w-4xl mx-auto" ref={promiseHeadingRef}>
                         Our mission is to design websites that attract and engage customers.
                     </h2>
-                    <p className="z-2 text-slate-400 mt-5 max-w-[80%] md:max-w-full" ref={promiseTextRef}>
+                    <p className="z-2 text-slate-400 mt-5 max-w-[80%] md:max-w-full" ref={promiseHeadingText}>
                         However, we approach things a bit differently around here.
                     </p>
                     <VideoBackground url="/assets/videos/intro.mp4" classes="rounded-none lg:rounded-xl" />
                 </div>
             </section>
 
-            <section className="mt-30 md:mt-50 min-h-dvh relative flex flex-col justify-center items-center"
+            <section className="py-16 md:py-20 min-h-dvh relative flex flex-col justify-center items-center"
                 ref={whyUsContainerRef}
             >
                 <div className="text-center max-w-3xl mx-auto"> {/* Added px-4 for side padding on mobile */}
@@ -396,26 +470,26 @@ export const Homepage = () => {
                         We don’t just build websites — we craft digital experiences that inspire trust and drive results.
                     </p>
                 </div>
-                <div className="w-full max-w-7xl mx-auto  mt-10" ref={whyUsContainerCard}>
+                <div className="w-full max-w-7xl mx-auto  mt-10">
                     <FeaturesCard datas={whyus} classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" />
                 </div>
             </section>
 
-            <section className="mt-30 md:mt-50" ref={ourApproachContainerRef}>
+            <section className="py-16 md:py-20" ref={ourApproachContainerRef}>
                 <div className="flex justify-center items-center flex-col">
                     <h3 className="z-2 text-2xl lg:text-4xl/15 font-bold max-w-4xl mx-auto" ref={ourApproachContainerRefHeading}>Our Approach</h3>
                     <p className="text-slate-400 mt-2 max-w-[90%] md:max-w-full mx-auto text-center"
                         ref={ourApproachContainerRefText}>
                         Explore our streamlined approach to creating bespoke websites that align with your goals.
                     </p>
-                    <div className="mt-10" ref={ourApproachContainerRefCard}>
+                    <div className="mt-10">
                         <FeaturesCard icons='true' style='true' datas={ourapproach} steps classes="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5" />
                     </div>
                 </div>
 
             </section>
 
-            <section className="mt-30 md:mt-50 flex flex-col max-w-[90%] lg:flex-row justify-between gap-10 items-center lg:max-w-6xl m-auto " ref={ourStoryContainerRef}>
+            <section className="py-16 md:py-20 flex flex-col max-w-[90%] lg:flex-row justify-between gap-10 items-center lg:max-w-6xl m-auto " ref={ourStoryContainerRef}>
 
                 <div className="flex-1 flex items-start flex-col" ref={ourStoryContainerRefLeft}>
                     <Badge text="About Us" />
@@ -454,7 +528,7 @@ export const Homepage = () => {
                 />
             </section>
 
-            <section className="mt-30 md:mt-50 overflow-hidden" ref={toolContainerRef}>
+            <section className="py-16 md:py-20 overflow-hidden" ref={toolContainerRef}>
                 <div className="flex flex-col items-start max-w-[90%] lg:max-w-6xl m-auto">
                     <div className="flex justify-between items-center w-full">
                         <div className="max-w-2xl">
@@ -476,7 +550,7 @@ export const Homepage = () => {
                     style={{
                         maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)"
                     }}
-                    ref={toolContainerRefSlider}
+
                 >
                     <Slider ref={sliderRef} datas={toolWeUseDetails} />
                 </div>
@@ -489,14 +563,14 @@ export const Homepage = () => {
             </section>
 
 
-            <section className="mt-30 md:mt-50" ref={coreServiceRef}>
+            <section className="py-16 md:py-20 " ref={coreServiceRef}>
                 <div className="flex justify-center items-center flex-col">
                     <h3 className="z-2 text-2xl lg:text-4xl/15 font-bold max-w-4xl mx-auto" ref={coreServiceRefHeading}>Explore Our Core Services</h3>
                     <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center" ref={coreServiceRefText}>
                         Discover our comprehensive range of services tailored to enhance your digital presence.
                     </p>
 
-                    <div className="mt-10 max-w-6xl m-auto" ref={coreServiceRefCard}>
+                    <div className="mt-10 max-w-6xl m-auto">
                         <ServiceCard data={serviceCards} />
                     </div>
                 </div>
@@ -523,7 +597,7 @@ export const Homepage = () => {
             </section>
 
 
-            <section className="mt-30 md:mt-50 max-w-[90%] m-auto lg:max-w-full" ref={recentProjectContainer}>
+            <section className="py-16 md:py-20 max-w-[90%] m-auto lg:max-w-full" ref={recentProjectContainer}>
                 <div className="flex justify-center items-center flex-col">
                     <h3 className="z-2 text-2xl lg:text-4xl/15 font-bold max-w-4xl mx-auto" ref={recentProjectContainerHeading}>
                         Explore Our Recent Projects
@@ -532,39 +606,38 @@ export const Homepage = () => {
                         Browse through our portfolio showcasing diverse, innovative web design projects and client successes.
                     </p>
 
-                    <div className="mt-10" ref={recentProjectContainerList}>
+                    <div className="mt-10">
                         <ViewCards data={projectList} />
                     </div>
 
-                    <div className="mt-20" ref={recentProjectContainerBtn}>
+                    <div className="mt-30" ref={recentProjectContainerBtn}>
                         <Button url="/view-all-works" text="View All Works" classes />
                     </div>
                 </div>
             </section>
 
 
-
-            <section
-                className="mt-30 md:mt-50 flex flex-col-reverse md:flex-row justify-between gap-10 items-center max-w-[90%] md:max-w-6xl mx-auto"
-            >
-                <div className="w-full md:flex-1">
+            <section className="py-16 md:py-20 flex flex-col-reverse md:flex-row justify-between 
+            gap-10 items-center max-w-[90%] md:max-w-6xl mx-auto">
+                <div className="w-full md:flex-1" ref={performanceContainerRef}>
                     <Count data={countNumber} />
                 </div>
 
                 <div className="w-full md:flex-1 flex items-center md:items-start flex-col text-center md:text-left">
                     <Badge text="Results & Analytics" />
-                    <h3 className="z-2 text-2xl md:text-4xl font-bold mt-2">
+                    <h3 className="z-2 text-2xl md:text-4xl font-bold mt-2" ref={performanceContainerHeadingRef}>
                         Performance Insights and the Analytics Overview
                     </h3>
                     <div className="mt-5 md:mt-10 w-full">
-                        <h4 className="text-xl text-secondary">
-                            Trusted by Leading Brands</h4>
-                        <div
-                            className="mt-5 md:mt-7 max-w-lg mx-auto flex"
+                        <h4 className="text-xl text-secondary" ref={performanceContainerHeadingTwoRef}>
+                            Trusted by Leading Brands
+                        </h4>
+                        <div className="mt-5 md:mt-7 max-w-lg mx-auto flex"
                             style={{
                                 maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
                                 WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
                             }}
+                            ref={performanceContainerCard}
                         >
                             <SeamlessLogo data={trustedByLeadingBrands} />
                         </div>
@@ -572,11 +645,13 @@ export const Homepage = () => {
                 </div>
             </section>
 
-            <section className="mt-30 md:mt-50 flex flex-col justify-center items-center">
-                <h3 className="z-2 text-2xl md:text-4xl/15 font-bold max-w-4xl mx-auto">
+            <section className="py-16 md:py-20 flex flex-col justify-center items-center" ref={clientContainerRef}>
+                <h3 className="z-2 text-2xl md:text-4xl/15 font-bold max-w-4xl mx-auto" ref={clientContainerHeadingRef}>
                     Client Success Stories
                 </h3>
-                <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center">Discover what our clients say about their experiences and success working with us.</p>
+                <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center" ref={clientContainerTextRef}>
+                    Discover what our clients say about their experiences and success working with us.
+                </p>
 
                 <div className="mt-10"
                     style={{
@@ -589,12 +664,12 @@ export const Homepage = () => {
             </section>
 
 
-            <section className="mt-30 md:mt-50 flex flex-col justify-center items-center">
+            <section className="py-16 md:py-20 flex flex-col justify-center items-center" ref={faqContainerRef}>
                 <Badge text="FAQ" />
-                <h3 className="mt-3 md:mt-0 z-2 text-2xl md:text-4xl/15 font-bold max-w-4xl mx-auto">
+                <h3 className="mt-3 md:mt-0 z-2 text-2xl md:text-4xl/15 font-bold max-w-4xl mx-auto" ref={faqContainerHeadingRef}>
                     Frequently Asked Questions
                 </h3>
-                <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center">
+                <p className="text-slate-400 mt-3 max-w-[90%] md:max-w-full mx-auto text-center" ref={faqContainerTextRef}>
                     Answers to common questions about our services, processes, and what sets us apart.
                 </p>
 
@@ -604,7 +679,7 @@ export const Homepage = () => {
 
             </section>
 
-            <section className="mt-30 md:mt-50 mb-30 md:mb-50 max-w-6xl m-auto shadow-[0_0_15px_rgba(59,130,246,0.4),0_0_30px_rgba(59,130,246,0.2)] rounded-2xl">
+            <section className="py-16 md:py-20 mb-20 md:10 max-w-6xl m-auto ">
                 <StartProjectSection />
             </section>
 

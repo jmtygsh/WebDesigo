@@ -39,7 +39,11 @@ export const SeamlessLoop = ({ icons, rmborder }) => {
                 },
             }
         );
+
+
     }, { scope: marqueeRef }); // Pass marqueeRef as the scope for useGSAP
+
+
 
 
     if (!icons) return null;

@@ -2,11 +2,19 @@ import React, { useRef, useImperativeHandle, forwardRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard } from 'swiper/modules'; // It's good practice to import and use modules explicitly
 import Image from 'next/image';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Import Swiper styles
 import 'swiper/css';
 
+// Register the plugins
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export const Slider = forwardRef(({ datas }, ref) => {
+
+    const sliderContainer = useRef(null);
     const swiperInstanceRef = useRef(null);
 
     // Your useImperativeHandle is perfectly set up, no changes needed here.
@@ -23,11 +31,39 @@ export const Slider = forwardRef(({ datas }, ref) => {
         },
     }));
 
+
+
+    useGSAP(() => {
+        const allSlider = sliderContainer.current?.children[0]?.children;
+        const allSliderArr = gsap.utils.toArray(allSlider);
+
+
+
+        // on viewport
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sliderContainer.current,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            }
+        })
+
+
+        tl.from(allSliderArr, {
+            x: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            filter: "blur(2px)",
+            stagger: 0.3,
+        })
+    }, { scope: sliderContainer })
+
     if (!datas || datas.length === 0) return null;
 
     return (
         // The container with the fade-out mask. px-4 is a more standard Tailwind padding.
-        <div 
+        <div
             className="relative px-4 mt-5"
             style={{
                 maskImage: "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)"
@@ -35,9 +71,9 @@ export const Slider = forwardRef(({ datas }, ref) => {
         >
             <Swiper
                 // --- KEY CHANGES FOR RESPONSIVENESS ---
-                
+
                 // 1. Mobile-first: Set the default for the smallest screens first.
-                slidesPerView={1.2} 
+                slidesPerView={1.2}
                 spaceBetween={15}
 
                 // 2. Breakpoints: Progressively add more slides as the screen gets wider.
@@ -63,7 +99,7 @@ export const Slider = forwardRef(({ datas }, ref) => {
                         spaceBetween: 24,
                     },
                 }}
-                
+
                 // --- OTHER CONFIGURATIONS ---
                 loop={true}
                 onSwiper={(swiper) => (swiperInstanceRef.current = swiper)}
@@ -73,6 +109,7 @@ export const Slider = forwardRef(({ datas }, ref) => {
                 }}
                 modules={[Keyboard]} // Register the modules you use
                 className="mySwiper"
+                ref={sliderContainer}
             >
                 {datas.map((data) => (
                     // The pt-10 makes room for the icon positioned absolutely above the card

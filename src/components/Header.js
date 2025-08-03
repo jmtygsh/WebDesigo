@@ -7,6 +7,7 @@ import { navItems, contactItem } from "@/data/index";
 import { Button } from "@/components/Button";
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 // Note: FiClock is imported but not used in this specific file. 
 // It's likely used within the data/index file.
@@ -94,16 +95,16 @@ export const Header = () => {
         <>
             <header
                 ref={headerRef}
-                className="flex justify-between items-center px-4  
-                sm:px-6 md:px-10 py-4 fixed top-0 left-0 right-0 z-50 
-                transition-colors duration-300 bg-background md:bg-transparent"
-
+                className="flex justify-between items-center px-4 sm:px-6 md:px-10 py-4 fixed top-0 left-0 right-0 z-50 
+               transition-colors duration-300 backdrop-blur-lg border-b border-white/10"
             >
+
+
                 <Link href="/" onClick={handleLinkClick} className="z-10">
-                    <span className="text-lg md:text-2xl font-bold tracking-wider">WebDesigo</span>
+                    <Image src="/websigo.svg" width={100} height={100} alt="WEBDESIGO" />
                 </Link>
 
-                {/* Desktop Navigation -- CHANGED from md:flex to lg:flex */}
+                {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center border border-white/20 rounded-full p-1 bg-black/10 backdrop-blur-md">
                     <ul className="flex items-center">
                         {navItems.map((item) => (
@@ -121,6 +122,8 @@ export const Header = () => {
                         ))}
                     </ul>
                 </nav>
+
+
 
                 {/* Desktop Button -- CHANGED from md:block to lg:block */}
                 <div className="hidden lg:block">

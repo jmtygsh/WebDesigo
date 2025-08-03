@@ -1,19 +1,63 @@
-import React from 'react';
+import { useRef } from "react";
 import { BiCheckCircle } from "react-icons/bi";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from 'next/image';
 
+// Register the plugins
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+
 export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
+
+    const featuresCardRef = useRef(null);
+
+
+    useGSAP(() => {
+        const featuresCardCurrent = featuresCardRef.current;
+        const cards = gsap.utils.toArray(featuresCardCurrent?.children);
+
+        // console.log(featuresCardCurrent)
+        // console.log(cards)
+
+        // on viewport
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: featuresCardCurrent,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            }
+        })
+
+
+        tl.from(cards, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            filter: "blur(2px)",
+            stagger: 0.3,
+        })
+
+
+
+    }, { scope: featuresCardRef})
 
     if (!datas || datas.length === 0) return null; // avoid error
 
     return (
         <div className="relative px-5 mt-5">
             <div className="max-w-6xl mx-auto relative z-10">
-                <div className={`${classes} ${icons ? 'gap-6' : 'gap-10'}`}>
+                <div className={`${classes} ${icons ? 'gap-6' : 'gap-10'}`} ref={featuresCardRef}>
                     {datas.map((data) => (
                         <div
                             key={data.id}
-                            className={`relative bg-blue-100/5 border border-blue-500/20 rounded-xl p-8 backdrop-blur-sm transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-blue-500/15 group ${icons ? 'overflow-hidden' : ''}`}
+                            className={`relative bg-blue-100/5 border border-blue-500/20 rounded-xl p-8 backdrop-blur-sm 
+                                hover:border-blue-500/40 
+                                hover:-translate-y-0.5 
+                                hover:shadow-2xl 
+                                hover:shadow-blue-500/15 group ${icons ? 'overflow-hidden' : ''}`}
                         >
 
                             {icons ? (<div></div>) : (

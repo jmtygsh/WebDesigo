@@ -18,7 +18,7 @@ export const HeroSection = () => {
     const heroButton = useRef(null);
 
     useGSAP(() => {
-        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+        const tl = gsap.timeline({ defaults: { ease: "power2.out", filter: "blur(2px)", } });
         tl.from(heroHeading.current, { y: 30, opacity: 0, duration: 0.8 });
         tl.from(heroParagraph.current, { y: 20, opacity: 0, duration: 0.7 });
         tl.from(heroButton.current, { scale: 0.9, opacity: 0, duration: 0.6 });
@@ -26,7 +26,7 @@ export const HeroSection = () => {
     }, { scope: container });
 
     return (
-        <div ref={container} className="max-w-6xl lg:max-w-3/6 text-center space-y-5 flex flex-col items-center z-2">
+        <div ref={container} className="max-w-[90%] lg:max-w-3/6 text-center space-y-5 flex flex-col items-center z-2">
 
             <Link
                 ref={heroLink}

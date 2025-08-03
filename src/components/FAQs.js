@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Fake data for the FAQs
+
+// Register the plugins
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export const FAQs = ({ data }) => {
+
+    const faqContaienr = useRef(null);
+    const faqContainerData = useRef(null);
+
+
     // State to manage which FAQ item is currently open
     const [openId, setOpenId] = useState(null);
 
@@ -11,13 +21,43 @@ export const FAQs = ({ data }) => {
         setOpenId(openId === id ? null : id);
     };
 
+
+    useGSAP(() => {
+
+        // on viewport
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: faqContaienr.current,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            }
+        })
+
+
+        tl.from(faqContainerData.current?.children, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            filter: "blur(2px)",
+            stagger: 0.5,
+        })
+
+
+
+    }, { scope: faqContaienr })
+
+
+
+
     return (
-        <div className='max-w-[90%] md:max-w-4xl mx-auto'>
-            <div className='space-y-6'>
+        <div className='max-w-[90%] md:max-w-4xl mx-auto' ref={faqContaienr}>
+            <div className='space-y-6' ref={faqContainerData}>
                 {data.map((faq) => (
                     <div
                         key={faq.id}
-                        className='bg-[#11142b] border border-[#2d325a] rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl hover:border-blue-500/40'
+                        className='bg-[#11142b] border border-[#2d325a] rounded-xl overflow-hidden shadow-lg 
+                         ease-in-out hover:shadow-2xl hover:border-blue-500/40'
                     >
                         <button
                             onClick={() => toggleFAQ(faq.id)}

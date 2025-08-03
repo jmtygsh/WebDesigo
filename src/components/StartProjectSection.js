@@ -37,7 +37,8 @@ export const StartProjectSection = () => {
     }, { scope: container });
 
     return (
-        <div ref={container} className='relative rounded-none md:rounded-2xl bg-[#010417] overflow-hidden'>
+        <div ref={container} className='relative rounded-none md:rounded-2xl bg-[#010417] overflow-hidden 
+        shadow-[0_0_15px_rgba(59,130,246,0.4),0_0_30px_rgba(59,130,246,0.2)]'>
 
             <div className="relative z-10 mx-auto max-w-6xl text-center py-16 md:py-24 px-4 flex flex-col items-center justify-center rounded-xl">
 

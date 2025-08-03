@@ -62,6 +62,27 @@ export const ViewCards = ({ data }) => {
             };
         });
 
+
+        // on viewport
+        const tls = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+            }
+        })
+
+
+        tls.from(containerRef.current?.children, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            filter: "blur(2px)",
+            stagger: 0.5,
+        })
+
+
     }, [data]); // Re-run effect if data changes
 
     if (!data || data.length === 0) return null;
