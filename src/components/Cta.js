@@ -9,7 +9,7 @@ export const Cta = () => {
                     Have a Project in Mind?
                 </h2>
                 <p className="text-slate-400 max-w-[90%] md:max-w-full mx-auto text-center">
-                    We're always excited to hear about new ideas. Let's talk about how we can work together to create something truly special for your brand.
+                    We&apos;re always excited to hear about new ideas. Let&apos;s talk about how we can work together to create something truly special for your brand.
                 </p>
                 <Button url="/contact-us" text="Let's Talk" />
             </div>
