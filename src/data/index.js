@@ -13,15 +13,15 @@ import {
 export const navItems = [
     { name: "Home", href: "/", icon: <FiHome /> },
     { name: "Services", href: "/services", icon: <FiGrid /> },
-    { name: "Works", href: "/our-works", icon: <FiBriefcase /> },
-    { name: "Hire", href: "/timeline", icon: <FiSend /> },
-    { name: "About", href: "/waitlist", icon: <FiUser /> },
+    { name: "Works", href: "/works", icon: <FiBriefcase /> },
+    // { name: "Hire Me", href: "/hire", icon: <FiSend /> },
+    { name: "About", href: "/about", icon: <FiUser /> },
 ];
 
 // Separate item for the "Contact Us" button/link for distinct styling
 export const contactItem = {
     name: "Contact",
-    href: "/contact-us",
+    href: "/contact",
     icon: <FiMail />
 };
 
@@ -309,7 +309,7 @@ export const serviceCards = [
         id: 1,
         title: "Web Design",
         description: "Crafting visually captivating websites that resonate with your audience and elevate your brand identity.",
-        btnUrl: "/contact-us",
+        btnUrl: "/contact",
         btnText: "Contact Us",
         // Use an array for 'features' or 'listItems'
         features: [
@@ -324,7 +324,7 @@ export const serviceCards = [
         id: 2,
         title: "Web Development",
         description: "Building robust websites with advanced functionality and seamless performance, tailored to your business needs.",
-        btnUrl: "/contact-us",
+        btnUrl: "/contact",
         btnText: "Contact Us",
         // Use an array here too
         features: [
@@ -542,3 +542,190 @@ export const faqData = [
         answer: "Once your order ships, you will receive an email with a tracking number and a link to the carrier's website. You can also log into your account to check the status of your order at any time."
     }
 ];
+
+
+
+// service pages 
+export const ourAllServices = [
+    {
+        id: 1,
+        title: "Web Design",
+        description: "Crafting visually captivating websites that resonate with your audience and elevate your brand identity.",
+        btnUrl: "/contact",
+        btnText: "Contact Us",
+        features: [
+            "Customized visual aesthetics.",
+            "User-centric design approach.",
+            "Responsive and mobile-friendly.",
+            "Intuitive user interface (UI).",
+            "Interactive and engaging layouts.",
+        ],
+    },
+    {
+        id: 2,
+        title: "Web Development",
+        description: "Building robust websites with advanced functionality and seamless performance, tailored to your business needs.",
+        btnUrl: "/contact",
+        btnText: "Contact Us",
+        features: [
+            "Custom backend development.",
+            "Ongoing maintenance and support.",
+            "Security and data protection.",
+            "Content management systems (CMS).",
+            "API integration and development.",
+        ],
+    },
+    {
+        id: 3,
+        title: "Content Writing",
+        description: "Delivering compelling and SEO-optimized content that aligns with your brand voice and engages your audience.",
+        btnUrl: "/contact",
+        btnText: "Contact Us",
+        features: [
+            "SEO-optimized blog posts and articles.",
+            "Professional website copywriting.",
+            "Brand-consistent tone and messaging.",
+            "Engaging product descriptions.",
+            "Proofreading and editing services.",
+        ],
+    },
+    {
+        id: 4,
+        title: "Branding",
+        description: "Creating a powerful and cohesive brand identity that makes a lasting impression and drives customer loyalty.",
+        btnUrl: "/contact",
+        btnText: "Contact Us",
+        features: [
+            "Brand strategy and positioning.",
+            "Visual identity development.",
+            "Color palette and typography selection.",
+            "Voice and tone guidelines.",
+            "Comprehensive brand guidelines.",
+        ],
+    },
+    {
+        id: 5,
+        title: "Social Post Design",
+        description: "Designing eye-catching social media graphics that enhance engagement and maintain brand consistency.",
+        btnUrl: "/contact",
+        btnText: "Contact Us",
+        features: [
+            "Platform-specific post designs.",
+            "Branded templates and themes.",
+            "Animation and motion graphics.",
+            "Story and reel visuals.",
+            "Consistent visual storytelling.",
+        ],
+    },
+    {
+        id: 6,
+        title: "SEO",
+        description: "Optimizing your website to improve visibility on search engines, attract organic traffic, and boost conversions.",
+        btnUrl: "/contact",
+        btnText: "Contact Us",
+        features: [
+            "Keyword research and targeting.",
+            "On-page SEO optimization.",
+            "Technical SEO audits.",
+            "Backlink building strategies.",
+            "Analytics and performance reporting.",
+        ],
+    },
+    {
+        id: 7,
+        title: "Packaging Design",
+        description: "Designing innovative and functional packaging that communicates your brand message and attracts customers.",
+        btnUrl: "/contact",
+        btnText: "Contact Us",
+        features: [
+            "Custom packaging concepts.",
+            "Brand-consistent visual design.",
+            "Structural and dieline planning.",
+            "Eco-friendly material options.",
+            "Retail shelf appeal design.",
+        ],
+    },
+    {
+        id: 8,
+        title: "Logo Design",
+        description: "Crafting unique and memorable logos that visually represent your brand’s identity and values.",
+        btnUrl: "/contact",
+        btnText: "Contact Us",
+        features: [
+            "Multiple concept explorations.",
+            "Scalable vector formats.",
+            "Color and black-and-white variations.",
+            "Typography and iconography selection.",
+            "Final files for web and print.",
+        ],
+    },
+];
+
+
+export const projectAllList = [
+    {
+        id: 1,
+        src: "/assets/imgs/projects/project-1.avif",
+        title: "Clever — Saas Landing Page",
+        pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+        url: "/project-clever",
+        text: "View Projects"
+    },
+    {
+        id: 2,
+        src: "/assets/imgs/projects/project-2.avif",
+        title: "Clever — Saas Landing Page",
+        pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+        url: "/project-clever",
+        text: "View Projects"
+    },
+    {
+        id: 3,
+        src: "/assets/imgs/projects/project-3.avif",
+        title: "Clever — Saas Landing Page",
+        pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+        url: "/project-clever",
+        text: "View Projects"
+    },
+    {
+        id: 4,
+        src: "/assets/imgs/projects/project-4.avif",
+        title: "Clever — Saas Landing Page",
+        pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+        url: "/project-clever",
+        text: "View Projects"
+    },
+    {
+        id: 5,
+        src: "/assets/imgs/projects/project-4.avif",
+        title: "Clever — Saas Landing Page",
+        pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+        url: "/project-clever",
+        text: "View Projects"
+    },
+    {
+        id: 6,
+        src: "/assets/imgs/projects/project-4.avif",
+        title: "Clever — Saas Landing Page",
+        pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+        url: "/project-clever",
+        text: "View Projects"
+    },
+    {
+        id: 7,
+        src: "/assets/imgs/projects/project-4.avif",
+        title: "Clever — Saas Landing Page",
+        pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+        url: "/project-clever",
+        text: "View Projects"
+    },
+    {
+        id: 8,
+        src: "/assets/imgs/projects/project-4.avif",
+        title: "Clever — Saas Landing Page",
+        pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
+        url: "/project-clever",
+        text: "View Projects"
+    },
+
+]

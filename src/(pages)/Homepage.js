@@ -509,9 +509,9 @@ export const Homepage = () => {
                         Our mission is to empower businesses with innovative websites that not only captivate but also drive results.
                     </p>
                     <div className="mt-5 flex flex-wrap gap-5 items-center" ref={ourStoryContainerRefBtn}>
-                        <Button className="mt-20" url="/contact-us" text="Contact Us" />
+                        <Button className="mt-20" url="/contact" text="Contact Us" />
                         <div className="hidden lg:block">
-                            <Button url="/contact-us" text="View Projects" classes />
+                            <Button url="/contact" text="View Projects" classes />
                         </div>
 
                     </div>
@@ -611,7 +611,7 @@ export const Homepage = () => {
                     </div>
 
                     <div className="mt-30" ref={recentProjectContainerBtn}>
-                        <Button url="/view-all-works" text="View All Works" classes />
+                        <Button url="/works" text="View All Works" classes />
                     </div>
                 </div>
             </section>

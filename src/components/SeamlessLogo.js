@@ -63,8 +63,14 @@ export const SeamlessLogo = ({ data }) => {
                         key={`${item.id}-${index}`}
                         className={`flex gap-3 items-center text-secondary`}
                     >
-                        {/* Display the icon image for the item. */}
-                        <Image src={item.icon} width={160} height={160} alt={item.title || "Logo"} draggable="false" />
+                        <Image
+                            src={item.icon}
+                            width={160}
+                            height={160}
+                            alt={item.title || "Logo"}
+                            draggable={false}
+                            style={{ height: '50px', objectFit: 'cover' }}
+                        />
                     </div>
                 ))}
             </div>

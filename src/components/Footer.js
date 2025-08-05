@@ -44,7 +44,7 @@ export const Footer = () => {
                                 );
                             })}
                         </div>
-                        <Button url="/contact-us" text="Contact Us" />
+                        <Button url="/contact" text="Contact Us" />
                     </div>
 
                     {/* KEY CHANGE: Right Section Link Lists.
@@ -105,7 +105,7 @@ export const Footer = () => {
                 {/* Footer Bottom Section */}
                 <div className="relative z-10 border-t border-gray-800 mt-12 pt-6 text-center md:flex md:justify-between text-gray-500 text-xs">
                     <p className="mb-2 md:mb-0">&copy; {new Date().getFullYear()} WebDesigo. All rights reserved.</p>
-                    <p>Designed by WebDesigo</p>
+                    <p>Designed by <Link href="https://github.com/jmtygsh" target='_blank'> WebDesigo </Link> </p>
                 </div>
             </div>
         </footer>
