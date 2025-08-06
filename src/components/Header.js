@@ -113,7 +113,7 @@ export const Header = () => {
                                     href={item.href}
                                     className={`flex items-center gap-2 px-5 py-2 rounded-full transition-all duration-300 ${pathname === item.href ? "bg-primary text-background" : "text-secondary hover:text-primary"}`}
                                 >
-                                    <span className="text-lg transition-transform duration-300 group-hover:scale-110">{item.icon}</span>
+                                    <span className="text-lg transition-transform duration-300">{item.icon}</span>
                                     <span className={`text-sm tracking-[1px] ${pathname === item.href ? "font-semibold" : "font-normal"}`}>
                                         {item.name}
                                     </span>
@@ -166,7 +166,7 @@ export const Header = () => {
                                         onClick={handleLinkClick}
                                         className={`group flex items-center gap-2 px-4 py-3 rounded-lg text-lg transition-colors duration-300 ${pathname === item.href ? "text-primary font-semibold" : "text-secondary hover:text-primary"}`}
                                     >
-                                        <span className="transition-transform duration-300 group-hover:scale-125">{item.icon}</span>
+                                        <span className="transition-transform duration-300">{item.icon}</span>
                                         <span>{item.name}</span>
                                     </Link>
                                 </li>
@@ -179,7 +179,7 @@ export const Header = () => {
                                     onClick={handleLinkClick}
                                     className={`group flex items-center gap-2 px-4 py-3 rounded-lg text-lg transition-colors duration-300 ${pathname === contactItem.href ? "text-primary font-semibold" : "text-secondary hover:text-primary"}`}
                                 >
-                                    <span className="transition-transform duration-300 group-hover:scale-125">{contactItem.icon}</span>
+                                    <span className="transition-transform duration-300">{contactItem.icon}</span>
                                     <span className="text-lg">{contactItem.name}</span>
                                 </Link>
                             </li>

@@ -380,6 +380,21 @@ export const seamlessLoopService = [
         title: "Social Post Design",
         w: 20,
         h: 20,
+    },
+    {
+        id: 7,
+        icon: "/assets/imgs/services/Social-Post-Design.svg",
+        title: "Web Design",
+        w: 20,
+        h: 20,
+    }
+    ,
+    {
+        id: 8,
+        icon: "/assets/imgs/services/Social-Post-Design.svg",
+        title: "Web Development",
+        w: 20,
+        h: 20,
     }
 
 ]
