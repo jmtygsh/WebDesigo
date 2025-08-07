@@ -511,7 +511,7 @@ export const Homepage = () => {
                     <div className="mt-5 flex flex-wrap gap-5 items-center" ref={ourStoryContainerRefBtn}>
                         <Button className="mt-20" url="/contact" text="Contact Us" />
                         <div className="hidden lg:block">
-                            <Button url="/contact" text="View Projects" classes />
+                            <Button url="/works" text="View Projects" classes />
                         </div>
 
                     </div>

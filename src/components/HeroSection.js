@@ -50,7 +50,7 @@ export const HeroSection = () => {
             </p>
 
             <div ref={heroButton}>
-                <Button url="/contact" text="Get Started" />
+                <Button url="/contact" text="Get Free Consultation" />
             </div>
         </div>
     );
