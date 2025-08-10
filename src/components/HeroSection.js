@@ -41,7 +41,7 @@ export const HeroSection = () => {
                 </span>
             </Link>
 
-            <h1 ref={heroHeading} className="text-2xl lg:text-5xl/15 font-bold">
+            <h1 ref={heroHeading} className="text-2xl md:text-4xl lg:text-5xl/15 font-bold">
                 Design That Powers Real Business Growth
             </h1>
 

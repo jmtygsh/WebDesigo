@@ -162,7 +162,7 @@ export const Contact = () => {
       <div className="container mx-auto px-4 py-16 sm:py-24 lg:px-8">
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-2xl md:text-4xl/15 font-bold tracking-tight text-white">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl/15 font-bold tracking-tight text-white">
             Contact Us
           </h1>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-center">

@@ -52,10 +52,10 @@ export const Slider = forwardRef(({ datas }, ref) => {
         tl.from(allSliderArr, {
             x: -50,
             opacity: 0,
-            duration: 1,
+            duration: 0.2,
             ease: "power2.out",
             filter: "blur(2px)",
-            stagger: 0.3,
+            stagger: 0.2,
         })
     }, { scope: sliderContainer })
 

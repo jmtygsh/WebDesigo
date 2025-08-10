@@ -17,7 +17,7 @@ export const Service = () => {
                 <VideoBackground url="/assets/videos/bgbackground.mp4" />
 
                 <div className="relative max-w-[90%] lg:max-w-3/6 text-center space-y-5 flex flex-col items-center z-2">
-                    <h1 className="text-2xl lg:text-5xl/15 font-bold">
+                    <h1 className="text-2xl md:text-4xl/15 lg:text-5xl/15 font-bold">
                         Explore Our Services
                     </h1>
 

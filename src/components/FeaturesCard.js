@@ -108,7 +108,7 @@ export const FeaturesCard = ({ style, icons, datas, steps, classes }) => {
                                 }
 
 
-                                <h3 className="text-white text-xl lg:font-semibold mb-3">
+                                <h3 className="text-white text-base md:text-xl lg:font-semibold mb-3">
                                     {data.title}
                                 </h3>
                                 <p className="text-slate-400 text-base leading-relaxed">

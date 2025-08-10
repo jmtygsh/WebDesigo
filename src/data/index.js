@@ -1,4 +1,6 @@
-// Location: @/data/index.ts
+//================================================================================================
+// IMPORTS
+//================================================================================================
 
 import {
   FiHome,
@@ -8,6 +10,26 @@ import {
   FiUser,
   FiMail,
 } from "react-icons/fi";
+import { FaLinkedinIn, FaSquareXTwitter, FaInstagram } from "react-icons/fa6";
+import {
+  FaStar,
+  FaRocket,
+  FaPaintBrush,
+  FaCode,
+  FaBolt,
+  FaSearch,
+  FaChartLine,
+  FaCheckCircle,
+  FaBullseye,
+  FaUsers,
+  FaFileAlt,
+  FaLink,
+  FaWrench,
+} from "react-icons/fa";
+
+//================================================================================================
+// LAYOUT & NAVIGATION DATA (Header, Footer, etc.)
+//================================================================================================
 
 // Main navigation items for the header
 export const navItems = [
@@ -25,49 +47,95 @@ export const contactItem = {
   icon: <FiMail />,
 };
 
+// Social media links
+export const socialLinks = [
+  {
+    id: 1,
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/yourcompany/", // Replace with actual LinkedIn URL
+    icon: FaLinkedinIn,
+    hoverClass: "hover:bg-blue-600 hover:text-white",
+  },
+  {
+    id: 2,
+    name: "X (formerly Twitter)",
+    href: "https://x.com/yourcompany", // Replace with actual X (Twitter) URL
+    icon: FaSquareXTwitter,
+    hoverClass: "hover:bg-white hover:text-black",
+  },
+  {
+    id: 3,
+    name: "Instagram",
+    href: "https://www.instagram.com/yourcompany/", // Replace with actual Instagram URL
+    icon: FaInstagram,
+    hoverClass: "hover:bg-pink-600 hover:text-white",
+  },
+];
+
+// Footer Links: Services
 export const ourService = [
   {
     id: 1,
     title: "Web Design",
-    url: "/contact",
+    url: "/services/web-design",
   },
   {
     id: 2,
     title: "Web Development",
-    url: "/contact",
+    url: "/services/web-development",
   },
   {
     id: 3,
     title: "Branding",
-    url: "/contact",
+    url: "/services/branding",
   },
   {
     id: 4,
-    title: "Content Writing",
-    url: "/contact",
+    title: "Ecommerce Website",
+    url: "/services/ecommerce-website",
   },
   {
     id: 5,
     title: "Logo Design",
-    url: "/contact",
+    url: "/services/branding",
   },
   {
     id: 6,
-    title: "Packaging Design",
-    url: "/contact",
+    title: "SEO",
+    url: "/services/seo",
   },
   {
     id: 7,
-    title: "SEO",
-    url: "/contact",
-  },
-  {
-    id: 8,
-    title: "Social Post Design",
-    url: "/contact",
+    title: "Online Marketing",
+    url: "/services/online-marketing",
   },
 ];
 
+// Footer Links: Company
+export const ourCompany = [
+  {
+    id: 1,
+    title: "Our team",
+    url: "/our-team",
+  },
+  {
+    id: 2,
+    title: "FAQs",
+    url: "/faqs",
+  },
+  {
+    id: 3,
+    title: "Locations",
+    url: "/locations",
+  },
+  {
+    id: 4,
+    title: "Customer Reviews",
+    url: "/customer-reviews",
+  },
+];
+
+// Footer Links: Policy
 export const ourPolicy = [
   {
     id: 1,
@@ -99,7 +167,7 @@ export const ourPolicy = [
     title: "Data Protection Registration Certificate",
     url: "/policy/data-protection-registration-certificate",
   },
- 
+
   {
     id: 7,
     title: "Trustwave Trusted Commerce",
@@ -107,94 +175,11 @@ export const ourPolicy = [
   },
 ];
 
+//================================================================================================
+// HOME PAGE & GENERAL COMPONENT DATA
+//================================================================================================
 
-export const ourTeam = [
-  {
-    id: 1,
-    url: "/assets/imgs/Developer.jpg",
-    name: "James",
-    experties: "WebDesign & SEO"
-  }
-]
-
-
-// social media
-import { FaLinkedinIn, FaSquareXTwitter, FaInstagram } from "react-icons/fa6"; // Import icons here
-
-export const socialLinks = [
-  {
-    id: 1,
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/yourcompany/", // Replace with actual LinkedIn URL
-    icon: FaLinkedinIn,
-    hoverClass: "hover:bg-blue-600 hover:text-white",
-  },
-  {
-    id: 2,
-    name: "X (formerly Twitter)",
-    href: "https://x.com/yourcompany", // Replace with actual X (Twitter) URL
-    icon: FaSquareXTwitter,
-    hoverClass: "hover:bg-white hover:text-black",
-  },
-  {
-    id: 3,
-    name: "Instagram",
-    href: "https://www.instagram.com/yourcompany/", // Replace with actual Instagram URL
-    icon: FaInstagram,
-    hoverClass: "hover:bg-pink-600 hover:text-white",
-  },
-];
-
-// images
-import {
-  FaStar,
-  FaRocket,
-  FaPaintBrush,
-  FaCode,
-  FaBolt,
-  FaSearch,
-} from "react-icons/fa";
-
-export const images = [
-  {
-    src: "/assets/imgs/demoWebsites/1.png",
-    alt: "Website Demo 1",
-    width: 456,
-    height: 307,
-  },
-  {
-    src: "/assets/imgs/demoWebsites/2.png",
-    alt: "Website Demo 2",
-    width: 456,
-    height: 307,
-  },
-  {
-    src: "/assets/imgs/demoWebsites/mob1.png",
-    alt: "Website Mob Demo 1",
-    width: 162,
-    height: 307,
-  },
-  {
-    src: "/assets/imgs/demoWebsites/3.png",
-    alt: "Website Demo 3",
-    width: 456,
-    height: 307,
-  },
-  {
-    src: "/assets/imgs/demoWebsites/4.png",
-    alt: "Website Demo 4",
-    width: 456,
-    height: 307,
-  },
-  {
-    src: "/assets/imgs/demoWebsites/mob2.png",
-    alt: "Website Mob Demo 2",
-    width: 162,
-    height: 307,
-  },
-];
-
-// end images
+// Home Page: Features Section
 export const features = [
   {
     id: 1,
@@ -219,6 +204,7 @@ export const features = [
   },
 ];
 
+// Home Page: Why Us Section
 export const whyus = [
   {
     id: 1,
@@ -264,6 +250,7 @@ export const whyus = [
   },
 ];
 
+// Home Page: Our Approach Section
 export const ourapproach = [
   {
     id: 1,
@@ -295,128 +282,7 @@ export const ourapproach = [
   },
 ];
 
-export const toolWeUse = [
-  { src: "/assets/imgs/tools/figma.svg", alt: "Figma", width: 40, height: 40 },
-  { src: "/assets/imgs/tools/gsap.svg", alt: "Gsap", width: 40, height: 40 },
-  {
-    src: "/assets/imgs/tools/nextjs.svg",
-    alt: "Nextjs",
-    width: 40,
-    height: 40,
-  },
-  {
-    src: "/assets/imgs/tools/react-js.svg",
-    alt: "React js",
-    width: 40,
-    height: 40,
-  },
-  {
-    src: "/assets/imgs/tools/shopify.svg",
-    alt: "Shopify",
-    width: 40,
-    height: 40,
-  },
-  { src: "/assets/imgs/tools/vite.svg", alt: "Vite", width: 40, height: 40 },
-  {
-    src: "/assets/imgs/tools/wordpress.svg",
-    alt: "Wordpress",
-    width: 40,
-    height: 40,
-  },
-];
-
-export const toolWeUseDetails = [
-  {
-    id: 1,
-    icon: "/assets/imgs/tools/figma.svg",
-    title: "Figma",
-    description: "Collaborative design and prototyping tool online.",
-  },
-  {
-    id: 2,
-    icon: "/assets/imgs/tools/gsap.svg",
-    title: "GSAP",
-    description: "Interactive prototypes for advanced animations website.",
-  },
-  {
-    id: 3,
-    icon: "/assets/imgs/tools/nextjs.svg",
-    title: "Next Js",
-    description: "E-commerce platform for online shopping websites.",
-  },
-  {
-    id: 4,
-    icon: "/assets/imgs/tools/react-js.svg",
-    title: "React JS",
-    description: "All-in-one workspace for notes and project tasks.",
-  },
-  {
-    id: 5,
-    icon: "/assets/imgs/tools/shopify.svg",
-    title: "Shopify",
-    description: "All-in-one workspace for notes and project tasks.",
-  },
-  {
-    id: 6,
-    icon: "/assets/imgs/tools/vite.svg",
-    title: "Vite",
-    description: "All-in-one workspace for notes and project tasks.",
-  },
-  {
-    id: 7,
-    icon: "/assets/imgs/tools/wordpress.svg",
-    title: "Wordpress",
-    description: "All-in-one workspace for notes and project tasks.",
-  },
-  {
-    id: 8,
-    icon: "/assets/imgs/tools/wordpress.svg",
-    title: "Wordpress",
-    description: "All-in-one workspace for notes and project tasks.",
-  },
-  {
-    id: 9,
-    icon: "/assets/imgs/tools/wordpress.svg",
-    title: "Wordpress",
-    description: "All-in-one workspace for notes and project tasks.",
-  },
-];
-
-export const projectList = [
-  {
-    id: 1,
-    src: "/assets/imgs/projects/project-1.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
-    text: "View Projects",
-  },
-  {
-    id: 2,
-    src: "/assets/imgs/projects/project-2.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
-    text: "View Projects",
-  },
-  {
-    id: 3,
-    src: "/assets/imgs/projects/project-3.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
-    text: "View Projects",
-  },
-  {
-    id: 4,
-    src: "/assets/imgs/projects/project-4.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
-    text: "View Projects",
-  },
-];
-
+// Home Page: Service Cards
 export const serviceCards = [
   {
     id: 1,
@@ -452,6 +318,7 @@ export const serviceCards = [
   },
 ];
 
+// Home Page: Scrolling Service Banner
 export const seamlessLoopService = [
   {
     id: 1,
@@ -511,6 +378,171 @@ export const seamlessLoopService = [
   },
 ];
 
+// Home Page: Tools We Use Section
+export const toolWeUse = [
+  { src: "/assets/imgs/tools/figma.svg", alt: "Figma", width: 40, height: 40 },
+  { src: "/assets/imgs/tools/gsap.svg", alt: "Gsap", width: 40, height: 40 },
+  {
+    src: "/assets/imgs/tools/nextjs.svg",
+    alt: "Nextjs",
+    width: 40,
+    height: 40,
+  },
+  {
+    src: "/assets/imgs/tools/react-js.svg",
+    alt: "React js",
+    width: 40,
+    height: 40,
+  },
+  {
+    src: "/assets/imgs/tools/shopify.svg",
+    alt: "Shopify",
+    width: 40,
+    height: 40,
+  },
+  { src: "/assets/imgs/tools/vite.svg", alt: "Vite", width: 40, height: 40 },
+  {
+    src: "/assets/imgs/tools/wordpress.svg",
+    alt: "Wordpress",
+    width: 40,
+    height: 40,
+  },
+];
+
+export const toolWeUseDetails = [
+  {
+    id: 1,
+    icon: "/assets/imgs/tools/figma.svg",
+    title: "Figma",
+    description: "Collaborative design and prototyping tool online.",
+  },
+  {
+    id: 2,
+    icon: "/assets/imgs/tools/gsap.svg",
+    title: "GSAP",
+    description: "Interactive prototypes for advanced animations.",
+  },
+  {
+    id: 3,
+    icon: "/assets/imgs/tools/nextjs.svg",
+    title: "Next Js",
+    description: "E-commerce platform for online shopping websites.",
+  },
+  {
+    id: 4,
+    icon: "/assets/imgs/tools/react-js.svg",
+    title: "React JS",
+    description: "All-in-one workspace for notes and project tasks.",
+  },
+  {
+    id: 5,
+    icon: "/assets/imgs/tools/shopify.svg",
+    title: "Shopify",
+    description: "All-in-one workspace for notes and project tasks.",
+  },
+  {
+    id: 6,
+    icon: "/assets/imgs/tools/vite.svg",
+    title: "Vite",
+    description: "All-in-one workspace for notes and project tasks.",
+  },
+  {
+    id: 7,
+    icon: "/assets/imgs/tools/wordpress.svg",
+    title: "Wordpress",
+    description: "All-in-one workspace for notes and project tasks.",
+  },
+  {
+    id: 8,
+    icon: "/assets/imgs/tools/wordpress.svg",
+    title: "Wordpress",
+    description: "All-in-one workspace for notes and project tasks.",
+  },
+  {
+    id: 9,
+    icon: "/assets/imgs/tools/wordpress.svg",
+    title: "Wordpress",
+    description: "All-in-one workspace for notes and project tasks.",
+  },
+];
+
+// Home Page: Image Gallery
+export const images = [
+  {
+    src: "/assets/imgs/demoWebsites/1.png",
+    alt: "Website Demo 1",
+    width: 456,
+    height: 307,
+  },
+  {
+    src: "/assets/imgs/demoWebsites/2.png",
+    alt: "Website Demo 2",
+    width: 456,
+    height: 307,
+  },
+  {
+    src: "/assets/imgs/demoWebsites/mob1.png",
+    alt: "Website Mob Demo 1",
+    width: 162,
+    height: 307,
+  },
+  {
+    src: "/assets/imgs/demoWebsites/3.png",
+    alt: "Website Demo 3",
+    width: 456,
+    height: 307,
+  },
+  {
+    src: "/assets/imgs/demoWebsites/4.png",
+    alt: "Website Demo 4",
+    width: 456,
+    height: 307,
+  },
+  {
+    src: "/assets/imgs/demoWebsites/mob2.png",
+    alt: "Website Mob Demo 2",
+    width: 162,
+    height: 307,
+  },
+];
+
+// Home Page: Featured Projects
+export const projectList = [
+  {
+    id: 1,
+    src: "/assets/imgs/webdevelopment/1.png",
+    title: "MnMist - Grow your sales fast.",
+    pera: "MnMist is an intelligent sales acceleration platform designed to provide your team with actionable insights and boost revenue.",
+    url: "/",
+    text: "View Projects",
+  },
+  {
+    id: 2,
+    src: "/assets/imgs/webdevelopment/2.png",
+    title: "Agency - Designed for Impact.",
+    pera: "Agency is a premium business built to elevate brand and convert visitors into clients.",
+    url: "/",
+    text: "View Projects",
+  },
+  {
+    id: 3,
+    src: "/assets/imgs/webdevelopment/3.png",
+    title: "InSync — Saas Landing Page",
+    pera: "InSync is a versatile landing page template designed to perfectly showcase collaboration software and team-focused features.",
+    url: "/",
+    text: "View Projects",
+  },
+  {
+    id: 4,
+    src: "/assets/imgs/webdevelopment/4.png",
+    title: "FitBit - GYM Membership",
+    pera: "It is a personalized fitness experience designed to combine premium gym access with data-driven insights from your tracker.",
+    url: "/",
+    text: "View Projects",
+  },
+];
+
+// Home Page: Stats Counter
 export const countNumber = [
   {
     id: 1,
@@ -538,6 +570,7 @@ export const countNumber = [
   },
 ];
 
+// Home Page: Trusted By Section
 export const trustedByLeadingBrands = [
   {
     id: 1,
@@ -566,6 +599,7 @@ export const trustedByLeadingBrands = [
   },
 ];
 
+// Home Page: Testimonials
 export const testimonials = [
   {
     id: 1,
@@ -644,6 +678,7 @@ export const testimonials = [
   },
 ];
 
+// Home Page: FAQ Section
 export const faqData = [
   {
     id: 1,
@@ -726,7 +761,11 @@ export const faqData = [
   },
 ];
 
-// service pages
+//================================================================================================
+// DEDICATED PAGE DATA
+//================================================================================================
+
+// Services Page: Full List
 export const ourAllServices = [
   {
     id: 1,
@@ -850,69 +889,215 @@ export const ourAllServices = [
   },
 ];
 
+// Works/Projects Page: Full List
 export const projectAllList = [
   {
     id: 1,
-    src: "/assets/imgs/projects/project-1.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
+    src: "/assets/imgs/webdevelopment/1.png",
+    title: "MnMist - Grow your sales fast.",
+    pera: "MnMist is an intelligent sales acceleration platform designed to provide your team with actionable insights and boost revenue.",
+    url: "/",
     text: "View Projects",
   },
   {
     id: 2,
-    src: "/assets/imgs/projects/project-2.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
+    src: "/assets/imgs/webdevelopment/2.png",
+    title: "Agency - Designed for Impact.",
+    pera: "Agency is a premium business built to elevate brand and convert visitors into clients.",
+    url: "/",
     text: "View Projects",
   },
   {
     id: 3,
-    src: "/assets/imgs/projects/project-3.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
+    src: "/assets/imgs/webdevelopment/3.png",
+    title: "InSync — Saas Landing Page",
+    pera: "InSync is a versatile landing page template designed to perfectly showcase collaboration software and team-focused features.",
+    url: "/",
     text: "View Projects",
   },
   {
     id: 4,
-    src: "/assets/imgs/projects/project-4.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
+    src: "/assets/imgs/webdevelopment/4.png",
+    title: "FitBit - GYM Membership",
+    pera: "It is a personalized fitness experience designed to combine premium gym access with data-driven insights from your tracker.",
+    url: "/",
     text: "View Projects",
   },
   {
     id: 5,
-    src: "/assets/imgs/projects/project-4.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
+    src: "/assets/imgs/webdevelopment/4.png",
+    title: "FitBit - GYM Membership",
+    pera: "It is a personalized fitness experience designed to combine premium gym access with data-driven insights from your tracker.",
+    url: "/",
     text: "View Projects",
   },
   {
     id: 6,
-    src: "/assets/imgs/projects/project-4.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
+    src: "/assets/imgs/webdevelopment/4.png",
+    title: "FitBit - GYM Membership",
+    pera: "It is a personalized fitness experience designed to combine premium gym access with data-driven insights from your tracker.",
+    url: "/",
     text: "View Projects",
   },
   {
     id: 7,
-    src: "/assets/imgs/projects/project-4.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
+    src: "/assets/imgs/webdevelopment/4.png",
+    title: "FitBit - GYM Membership",
+    pera: "It is a personalized fitness experience designed to combine premium gym access with data-driven insights from your tracker.",
+    url: "/",
     text: "View Projects",
   },
   {
     id: 8,
-    src: "/assets/imgs/projects/project-4.avif",
-    title: "Clever — Saas Landing Page",
-    pera: "Clever is a modern SaaS landing page template designed to showcase your software features effortlessly.",
-    url: "/project-clever",
+    src: "/assets/imgs/webdevelopment/4.png",
+    title: "FitBit - GYM Membership",
+    pera: "It is a personalized fitness experience designed to combine premium gym access with data-driven insights from your tracker.",
+    url: "/",
     text: "View Projects",
+  },
+];
+
+// Web Design Page: Gallery
+export const webDesignPageData = [
+  {
+    src: "/assets/imgs/webdesign/insign.webp",
+  },
+  {
+    src: "/assets/imgs/webdesign/WebDesigo.png",
+  },
+
+  {
+    src: "/assets/imgs/webdesign/SecuritySite.png",
+  },
+
+  {
+    src: "/assets/imgs/webdesign/gym.png",
+  },
+];
+
+// Web Development Page: Gallery
+export const webDevelopmentPageData = [
+  {
+    src: "/assets/imgs/webdevelopment/1.png",
+  },
+  {
+    src: "/assets/imgs/webdevelopment/2.png",
+  },
+
+  {
+    src: "/assets/imgs/webdevelopment/3.png",
+  },
+  {
+    src: "/assets/imgs/webdevelopment/4.png",
+  },
+];
+
+// Branding Page: Gallery
+export const brandingPageData = [
+  {
+    src: "/assets/imgs/branding/budda1.jpg",
+  },
+
+  {
+    src: "/assets/imgs/branding/budda2.png",
+  },
+
+  {
+    src: "/assets/imgs/branding/budda3.png",
+  },
+
+  {
+    src: "/assets/imgs/branding/budda4.png",
+  },
+
+  {
+    src: "/assets/imgs/branding/budda5.png",
+  },
+  {
+    src: "/assets/imgs/branding/ecomow.png",
+  },
+  {
+    src: "/assets/imgs/branding/ecomow1.png",
+  },
+
+  {
+    src: "/assets/imgs/branding/ecomow2.png",
+  },
+
+  {
+    src: "/assets/imgs/branding/ecomow3.png",
+  },
+  {
+    src: "/assets/imgs/branding/ecomow4.png",
+  },
+  {
+    src: "/assets/imgs/branding/ecomow5.png",
+  },
+  {
+    src: "/assets/imgs/branding/amazing.png",
+  },
+  {
+    src: "/assets/imgs/branding/amazing1.png",
+  },
+  {
+    src: "/assets/imgs/branding/amazing2.png",
+  },
+];
+
+// SEO Page: Case Studies Gallery
+export const seoCaseStudiesData = [
+  { src: "/assets/imgs/seo/seo-results.webp", alt: "SEO Case Study 1" },
+  { src: "/assets/imgs/seo/seo-results.webp", alt: "SEO Case Study 2" },
+  { src: "/assets/imgs/seo/seo-results.webp", alt: "SEO Case Study 3" },
+  { src: "/assets/imgs/seo/seo-results.webp", alt: "SEO Case Study 4" },
+];
+
+// SEO Page: Benefits Section
+export const benefits = [
+  {
+    icon: <FaChartLine size={30} className="text-blue-600" />,
+    title: "Enhanced Visibility",
+    description: "Appear on Page One where 90% of searchers are looking.",
+  },
+  {
+    icon: <FaCheckCircle size={30} className="text-blue-600" />,
+    title: "Builds Trust & Credibility",
+    description:
+      "Top rankings signal to users that you are a trusted authority.",
+  },
+  {
+    icon: <FaUsers size={30} className="text-blue-600" />,
+    title: "Better User Experience",
+    description:
+      "SEO best practices lead to a faster, more user-friendly site.",
+  },
+  {
+    icon: <FaBullseye size={30} className="text-blue-600" />,
+    title: "Tangible, Measurable Results",
+    description: "Track rankings, traffic, and conversions with precision.",
+  },
+];
+
+// SEO Page: Process Section
+export const processSteps = [
+  {
+    icon: <FaSearch size={24} />,
+    title: "Key Phrase Identification",
+    desc: "We find the high-value keywords your customers use to find you.",
+  },
+  {
+    icon: <FaWrench size={24} />,
+    title: "Technical SEO & On-Page",
+    desc: "We optimize site structure, speed, and metadata for peak performance.",
+  },
+  {
+    icon: <FaFileAlt size={24} />,
+    title: "Content Optimization",
+    desc: "Creating valuable content that answers user questions and ranks high.",
+  },
+  {
+    icon: <FaLink size={24} />,
+    title: "Authoritative Link Building",
+    desc: "We build high-quality backlinks to establish your site's authority.",
   },
 ];

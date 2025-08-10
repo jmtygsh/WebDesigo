@@ -60,7 +60,8 @@ export const Count = ({ data }) => {
     return (
         <div className="grid grid-cols-2 gap-5" ref={countRef}>
             {data.map((item, index) => (
-                <div key={item.id} className="relative bg-blue-100/5 border border-blue-500/20 rounded-xl p-8 backdrop-blur-sm 
+                <div key={item.id} className="relative bg-blue-100/5 border
+                 border-blue-500/20 rounded-xl p-8 backdrop-blur-sm 
                  hover:border-blue-500/40 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-blue-500/15 group overflow-hidden">
 
                     <div className="absolute inset-0 pointer-events-none"
@@ -77,7 +78,7 @@ export const Count = ({ data }) => {
                         }}
                     />
 
-                    <h4 className="text-2xl md:text-5xl font-bold text-center">
+                    <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
                         <span ref={el => numberRefs.current[index] = el}></span>
                     </h4>
                     <p className="text-slate-400 mt-1 text-center">{item.des}</p>

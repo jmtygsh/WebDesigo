@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { navItems, ourService, socialLinks, ourPolicy } from "@/data/index";
+import { navItems, ourService, socialLinks, ourPolicy, ourCompany } from "@/data/index";
 import { Button } from "@/components/Button";
 
 export const Footer = () => {
@@ -22,8 +22,8 @@ export const Footer = () => {
             >
               <Image
                 src="/websigo.svg"
-                height={200}
-                width={200}
+                height={120}
+                width={120}
                 alt="webdesigo"
               />
             </Link>
@@ -34,7 +34,7 @@ export const Footer = () => {
               WebDesigo LLC, 30 N Gould St Ste R Sheridan, WY, 82801, USA
             </p>
             <p className="text-gray-400 mb-6">+1 307 400 2532</p>
-            <p className="text-gray-400 mb-6">webdesigollc@gmail.com</p>
+            <Link href="mailto:thewebdesigo@gmail.com" target="_blank" className="text-gray-400 mb-6">thewebdesigo@gmail.com</Link>
 
             <div className="flex space-x-3 mb-8">
               {socialLinks.map((link) => {
@@ -80,7 +80,7 @@ export const Footer = () => {
                 Company
               </h3>
               <ul className="space-y-3 text-gray-400 text-sm">
-                {ourService.map((service) => (
+                {ourCompany.map((service) => (
                   <li key={service.id}>
                     {service.url ? (
                       <Link

@@ -15,7 +15,7 @@ export const About = () => {
             <section className="flex justify-center items-center h-dvh relative">
                 <VideoBackground url="/assets/videos/bgbackground.mp4" />
                 <div className="relative max-w-[90%] lg:max-w-4/6 text-center space-y-5 flex flex-col items-center z-10 p-4">
-                    <h1 className="text-3xl lg:text-5xl/snug font-bold">
+                    <h1 className="text-2xl md:text-4xl/15 lg:text-5xl/15 font-bold">
                         Crafting Connections Digitally
                     </h1>
                     <p className="text-lg text-secondary max-w-[90%] md:max-w-full mx-auto text-center">
@@ -36,11 +36,11 @@ export const About = () => {
                         />
                     </div>
                     {/* Text Column */}
-                    <div className="space-y-4 flex flex-col items-start">
+                    <div className="space-y-4 flex flex-col items-start md:items-center">
 
                         <Badge text="Our Story" />
 
-                        <h2 className="text-2xl md:text-4xl font-bold max-w-4xl mx-auto">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
                             Founded on a Passion for Code and Creativity
                         </h2>
                         <p className="text-slate-400 max-w-[90%] md:max-w-full md:mx-auto">
@@ -57,7 +57,7 @@ export const About = () => {
             <section className="py-16 lg:py-24 px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto text-center">
 
-                    <h2 className="text-2xl md:text-4xl/15 font-bold max-w-4xl mx-auto">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
                         The People Behind the Pixels
                     </h2>
                     <p className="mt-4 text-slate-400 max-w-[90%] md:max-w-full mx-auto text-center">
