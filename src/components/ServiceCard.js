@@ -26,7 +26,7 @@ const AnimatedItem = ({ item, index }) => {
         // Use the index to alternate animation direction
         x: index % 2 === 0 ? -100 : 100,
         opacity: 0,
-        duration: 2,
+        duration: 1,
         ease: "power2.out",
         filter: "blur(5px)",
       });

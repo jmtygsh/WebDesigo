@@ -20,9 +20,9 @@ export const HeroSection = () => {
     useGSAP(() => {
         const tl = gsap.timeline({ defaults: { ease: "power2.out", filter: "blur(2px)", } });
         tl.from(heroHeading.current, { y: 30, opacity: 0, duration: 0.8 });
-        tl.from(heroParagraph.current, { y: 20, opacity: 0, duration: 0.7 });
-        tl.from(heroButton.current, { scale: 0.9, opacity: 0, duration: 0.6 });
-        tl.from(heroLink.current, { scale: 0.9, opacity: 0, duration: 1 });
+        tl.from(heroParagraph.current, { y: 20, opacity: 0, duration: 0.7 },"<0.2");
+        tl.from(heroButton.current, { scale: 0.9, opacity: 0, duration: 0.6 }, "<0.2");
+        tl.from(heroLink.current, { scale: 0.9, opacity: 0, duration: 1 }, "<0.2");
     }, { scope: container });
 
     return (

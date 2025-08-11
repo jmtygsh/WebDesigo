@@ -125,14 +125,9 @@ export const ourCompany = [
   },
   {
     id: 3,
-    title: "Locations",
-    url: "/locations",
-  },
-  {
-    id: 4,
-    title: "Customer Reviews",
-    url: "/customer-reviews",
-  },
+    title: "Sitemap",
+    url: "/sitemap"
+  }
 ];
 
 // Footer Links: Policy
@@ -379,90 +374,65 @@ export const seamlessLoopService = [
 ];
 
 // Home Page: Tools We Use Section
-export const toolWeUse = [
-  { src: "/assets/imgs/tools/figma.svg", alt: "Figma", width: 40, height: 40 },
-  { src: "/assets/imgs/tools/gsap.svg", alt: "Gsap", width: 40, height: 40 },
-  {
-    src: "/assets/imgs/tools/nextjs.svg",
-    alt: "Nextjs",
-    width: 40,
-    height: 40,
-  },
-  {
-    src: "/assets/imgs/tools/react-js.svg",
-    alt: "React js",
-    width: 40,
-    height: 40,
-  },
-  {
-    src: "/assets/imgs/tools/shopify.svg",
-    alt: "Shopify",
-    width: 40,
-    height: 40,
-  },
-  { src: "/assets/imgs/tools/vite.svg", alt: "Vite", width: 40, height: 40 },
-  {
-    src: "/assets/imgs/tools/wordpress.svg",
-    alt: "Wordpress",
-    width: 40,
-    height: 40,
-  },
-];
-
 export const toolWeUseDetails = [
   {
     id: 1,
     icon: "/assets/imgs/tools/figma.svg",
     title: "Figma",
-    description: "Collaborative design and prototyping tool online.",
+    description:
+      "A collaborative interface design tool for creating websites and apps.",
   },
   {
     id: 2,
     icon: "/assets/imgs/tools/gsap.svg",
     title: "GSAP",
-    description: "Interactive prototypes for advanced animations.",
+    description:
+      "A robust JavaScript library for creating high-performance animations.",
   },
   {
     id: 3,
     icon: "/assets/imgs/tools/nextjs.svg",
-    title: "Next Js",
-    description: "E-commerce platform for online shopping websites.",
+    title: "Next.js",
+    description: "A React framework for building full-stack web applications.",
   },
   {
     id: 4,
     icon: "/assets/imgs/tools/react-js.svg",
     title: "React JS",
-    description: "All-in-one workspace for notes and project tasks.",
+    description: "A JavaScript library for building user interfaces.",
   },
   {
     id: 5,
     icon: "/assets/imgs/tools/shopify.svg",
     title: "Shopify",
-    description: "All-in-one workspace for notes and project tasks.",
+    description:
+      "An e-commerce platform for building and managing online stores.",
   },
   {
     id: 6,
     icon: "/assets/imgs/tools/vite.svg",
     title: "Vite",
-    description: "All-in-one workspace for notes and project tasks.",
+    description:
+      "A modern frontend build tool for faster and leaner development.",
   },
   {
     id: 7,
-    icon: "/assets/imgs/tools/wordpress.svg",
-    title: "Wordpress",
-    description: "All-in-one workspace for notes and project tasks.",
+    icon: "/assets/imgs/tools/nodejs.svg",
+    title: "Node.js",
+    description:
+      "A back-end JavaScript runtime environment for server-side applications.",
   },
   {
     id: 8,
     icon: "/assets/imgs/tools/wordpress.svg",
-    title: "Wordpress",
-    description: "All-in-one workspace for notes and project tasks.",
+    title: "WordPress",
+    description: "A popular open-source content management system (CMS).",
   },
   {
     id: 9,
-    icon: "/assets/imgs/tools/wordpress.svg",
-    title: "Wordpress",
-    description: "All-in-one workspace for notes and project tasks.",
+    icon: "/assets/imgs/tools/mongo-db-96.png",
+    title: "MongoDB",
+    description: "A NoSQL database program for storing large sets of data.",
   },
 ];
 
@@ -679,6 +649,41 @@ export const testimonials = [
 ];
 
 // Home Page: FAQ Section
+export const faqDataHome = [
+  {
+    id: 1,
+    question: "What technologies do you use to build custom websites?",
+    answer:
+      "We specialize in building high-performance, custom web solutions using modern JavaScript frameworks. Our primary stack includes Next.js and React.js, which allow us to create fast, scalable, and interactive websites tailored precisely to your business needs.",
+  },
+  {
+    id: 2,
+    question: "What is your process for starting a new project?",
+    answer:
+      "Our process begins with a discovery phase where we discuss your goals, target audience, and requirements. We then move to strategy and design, followed by development and client feedback rounds. Finally, we launch the project and provide any necessary training and support.",
+  },
+  {
+    id: 3,
+    question: "How much do your services cost?",
+    answer:
+      "Our pricing is tailored to the specific needs of each project. After our initial consultation, we'll provide a detailed proposal with a custom quote based on the scope of work. We offer project-based pricing as well as hourly rates for smaller tasks.",
+  },
+  {
+    id: 4,
+    question: "How long will it take to complete my project?",
+    answer:
+      "Timelines vary depending on the project's complexity. A simple logo or branding package might take 1-3 weeks, while a full website design and development project can take anywhere from 6 to 12 weeks. We will provide a detailed project timeline in our proposal.",
+  },
+  {
+    id: 5,
+    question:
+      "What if I'm not happy with the design? How many revisions are included?",
+    answer:
+      "We want you to love the final product! Our process includes a set number of revision rounds (typically two or three) at key stages. We'll work closely with you to ensure the final design meets your vision and goals.",
+  },
+];
+
+// FAQs Page
 export const faqData = [
   {
     id: 1,
@@ -758,6 +763,23 @@ export const faqData = [
     question: "Do you create social media post templates?",
     answer:
       "Yes! We can design a set of custom, reusable templates for your social media platforms (like Instagram or Facebook). These templates will align with your branding and make it easy for you to create consistent, professional-looking posts.",
+  },
+];
+
+// About us page
+
+export const founders = [
+  {
+    id: 1,
+    src: "/assets/imgs/founder.jpg",
+    name: "Aarav Sharma",
+    role: "Founder & Chief Strategist",
+  },
+  {
+    id: 2,
+    src: "/assets/imgs/Developer.jpg",
+    name: "Priya Deb",
+    role: "Head of Design & Development",
   },
 ];
 
@@ -1099,5 +1121,58 @@ export const processSteps = [
     icon: <FaLink size={24} />,
     title: "Authoritative Link Building",
     desc: "We build high-quality backlinks to establish your site's authority.",
+  },
+];
+
+// OUR Team profile pic
+export const teamData = [
+  {
+    name: "Aarav Sharma",
+    role: "Founder & Lead Strategist",
+    // Using a placeholder image service. Replace with your actual image paths.
+    imageUrl: "/assets/imgs/founder.jpg",
+    alt: "Portrait of Aarav Sharma",
+  },
+  {
+    name: "Priya Das",
+    role: "Head of Design & Development",
+    imageUrl: "/assets/imgs/Developer.jpg",
+    alt: "Portrait of Priya Das",
+  },
+  {
+    name: "Rohan Mehta",
+    role: "Senior UX/UI Designer",
+    imageUrl: "/assets/imgs/Developer.jpg",
+    alt: "Portrait of Rohan Mehta",
+  },
+  {
+    name: "Anika Reddy",
+    role: "Lead SEO & Content Specialist",
+    imageUrl: "/assets/imgs/Developer.jpg",
+    alt: "Portrait of Anika Reddy",
+  },
+];
+
+//SERVICE - Ecommerce Page Image data
+export const googleShoppingImages = [
+  {
+    id: 1,
+    src: "/assets/imgs/ecoms/ecommerce-website-seo.webp",
+    alt: "Diagram showing products listed on Google Shopping.",
+  },
+  {
+    id: 2,
+    src: "/assets/imgs/ecoms/ecommerce-website-seo.webp",
+    alt: "A different view of product listings.",
+  },
+  {
+    id: 3,
+    src: "/assets/imgs/ecoms/ecommerce-website-seo.webp",
+    alt: "Integration with Google's shopping feed.",
+  },
+  {
+    id: 4,
+    src: "/assets/imgs/ecoms/ecommerce-website-seo.webp",
+    alt: "Analytics view of Google Shopping performance.",
   },
 ];

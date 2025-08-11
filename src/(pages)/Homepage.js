@@ -29,7 +29,6 @@ import {
   features,
   whyus,
   ourapproach,
-  toolWeUse,
   toolWeUseDetails,
   projectList,
   serviceCards,
@@ -37,10 +36,10 @@ import {
   countNumber,
   trustedByLeadingBrands,
   testimonials,
-  faqData,
+  faqDataHome,
 } from "@/data/index";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export const Homepage = () => {
   const sliderRef = useRef(null);
@@ -102,6 +101,7 @@ export const Homepage = () => {
   // performance container
   const performanceContainerRef = useRef(null);
   const performanceContainerHeadingRef = useRef(null);
+  const performanceContainerBadgeRef = useRef(null);
   const performanceContainerHeadingTwoRef = useRef(null);
   const performanceContainerCard = useRef(null);
 
@@ -381,6 +381,7 @@ export const Homepage = () => {
           toggleActions: "play none none none",
         },
       })
+
       .from(performanceContainerHeadingRef.current, {
         y: 50,
         opacity: 0,
@@ -409,6 +410,17 @@ export const Homepage = () => {
           ease: "power2.out",
         },
         "-=0.4"
+      )
+      .from(
+        performanceContainerBadgeRef.current,
+        {
+          y: 50,
+          opacity: 0,
+          duration: DURATION_HEADING,
+          filter: "blur(2px)",
+          ease: "power2.out",
+        },
+        "-=0.3"
       );
 
     // --- Client Section ---
@@ -766,7 +778,10 @@ export const Homepage = () => {
         </div>
 
         <div className="w-full md:flex-1 flex items-center md:items-start flex-col text-center md:text-left">
-          <Badge text="Results & Analytics" />
+          <div ref={performanceContainerBadgeRef}>
+            <Badge text="Results & Analytics" />
+          </div>
+
           <h3
             className="z-2 text-2xl md:text-3xl/15 lg:text-4xl font-bold mt-2"
             ref={performanceContainerHeadingRef}
@@ -845,7 +860,7 @@ export const Homepage = () => {
         </p>
 
         <div className="mt-10">
-          <FAQs data={faqData} />
+          <FAQs data={faqDataHome} />
         </div>
       </section>
 

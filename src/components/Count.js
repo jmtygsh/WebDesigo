@@ -17,7 +17,7 @@ export const Count = ({ data }) => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: countCurrent,
-                start: 'top 80%',
+                start: 'top 100%',
                 toggleActions: 'play none none none',
             }
         });
@@ -46,7 +46,7 @@ export const Count = ({ data }) => {
                     },
                     scrollTrigger: {
                         trigger: el,
-                        start: "top 90%",
+                        start: "top 100%",
                         toggleActions: "play none none none",
                     }
                 }

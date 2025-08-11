@@ -11,95 +11,110 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { MasonryGrid } from "@/components/MasonryGrid";
-import { webDevelopmentPageData } from "@/data";
 
+// Register the GSAP plugins
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function onlineMarketing() {
-  const notice = useRef(null);
-  const heading = useRef(null);
-  const pera = useRef(null);
-  const btnConsultation = useRef(null);
-  const listBtn = useRef(null);
-  const recentWorkContainer = useRef(null);
-  const headingRecentWork = useRef(null);
-  const peraRecentWork = useRef(null);
+export default function OnlineMarketing() {
+  // A main container ref for scoping GSAP animations
+  const container = useRef(null);
+
+  // Refs for the Hero Section elements
+  const heroHeading = useRef(null);
+  const heroPera = useRef(null);
+  const heroCta = useRef(null);
+  const heroList = useRef(null);
+
+  // Refs for the "Sync Section" elements
+  const syncSection = useRef(null);
+  const syncHeading = useRef(null);
+  const syncPera = useRef(null);
+  const syncList = useRef(null);
+  const syncImage = useRef(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power2.out", duration: 1 } });
+    // --- 1. HERO SECTION ANIMATION (On Page Load) ---
+    const heroTl = gsap.timeline({
+      defaults: { ease: "power2.out", duration: 1 },
+    });
 
-    tl.from(notice.current, { opacity: 0, y: -20 })
-      .from(heading.current, { opacity: 0, y: -20 }, "-=0.5")
-      .from(pera.current, { opacity: 0, y: -20 }, "-=0.5")
-      .from(btnConsultation.current, { opacity: 0, scale: 0.8 }, "-=0.4")
+    heroTl
+      .from(heroHeading.current, { opacity: 0, y: -30 })
+      .from(heroPera.current, { opacity: 0, y: -20 }, "-=0.7")
+      .from(heroCta.current, { opacity: 0, scale: 0.8 }, "-=0.7")
       .from(
-        listBtn.current?.children,
+        heroList.current?.children,
         {
           opacity: 0,
-          y: 10,
-          stagger: 0.1,
+          y: 20,
+          stagger: 0.15,
         },
         "-=0.6"
       );
 
-    const rwtl = gsap.timeline({
+    // --- 2. SYNC SECTION ANIMATION (On Scroll) ---
+    const syncTl = gsap.timeline({
       scrollTrigger: {
-        trigger: recentWorkContainer.current,
-        start: "top 80%",
-        toggleActions: "play none none none", // play on enter, no reset or reverse
-        once: true, // optional: play only once
+        trigger: syncSection.current,
+        start: "top 80%", // Animation starts when the top of the section is 80% down the viewport
+        toggleActions: "play none none none",
+        once: true, // Animation plays only once
       },
       defaults: {
-        y: 50,
+        y: 40,
         opacity: 0,
-        duration: 0.2,
-        ease: "power2.out",
-        filter: "blur(2px)",
+        duration: 0.8,
+        ease: "power3.out",
+        filter: "blur(5px)", // Add a subtle blur effect
       },
     });
 
-    rwtl
-      .from(headingRecentWork.current, {}, 0) // starts at 0
-      .from(peraRecentWork.current, {}, "-=0.6"); // overlap start by 0.6s
-  }, []);
+    syncTl
+      .from(syncHeading.current, {})
+      .from(syncPera.current, {}, "-=0.6") // Overlap previous animation
+      .from(syncList.current.children, { stagger: 0.1 }, "-=0.6")
+      .from(syncImage.current, { scale: 0.9, y: 0 }, "-=0.8"); // Image scales in
+
+  }, { scope: container }); // Scope animations to the main container
 
   return (
-    <>
+    // Use the main container ref here
+    <main ref={container}>
       <Header />
       <section className="relative mt-10">
-        <div className="flex justify-center items-center h-dvh relative">
+        {/* HERO SECTION */}
+        <div className="flex min-h-screen items-center justify-center">
           <div className="relative z-10 flex max-w-[90%] flex-col items-center space-y-6 text-center lg:max-w-3xl">
             {/* Main Headline */}
             <h1
-              className="text-2xl md:text-4xl/15 lg:text-5xl/15 font-bold"
-              ref={heading}
+              className="text-2xl font-bold md:text-4xl/15 lg:text-5xl/15"
+              ref={heroHeading}
             >
               Unlock Your Online Growth Potential.
             </h1>
 
             {/* Description */}
-            <p className="max-w-2xl text-lg text-secondary" ref={pera}>
+            <p className="max-w-2xl text-lg text-secondary" ref={heroPera}>
               We craft stunning online shops and powerful marketing campaigns
               that turn browsers into loyal customers. Let us handle the digital
               complexities, so you can focus on running your business.
             </p>
 
             {/* Call-to-Action Button */}
-            <div className="pt-2" ref={btnConsultation}>
+            <div className="pt-2" ref={heroCta}>
               <Link
                 href="/contact"
-                className="rounded-full bg-white px-8 py-3 text-lg font-bold text-slate-900 shadow-md transition-bg duration-300 hover:bg-slate-200 hover:shadow-xl"
+                className="rounded-full bg-white px-8 py-3 text-lg font-bold text-slate-900 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl"
               >
                 Get a Free Consultation
               </Link>
             </div>
 
-            {/* Feature List as Pills/Tags */}
+            {/* Feature List */}
             <div className="w-full pt-6">
               <ul
                 className="mb-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap md:gap-6"
-                ref={listBtn}
+                ref={heroList}
               >
                 {[
                   "Conversion-Optimized Design",
@@ -115,25 +130,28 @@ export default function onlineMarketing() {
           </div>
         </div>
 
-        <div className="bg-slate-800 py-20 sm:py-28">
+        {/* SYNC PRODUCTS SECTION */}
+        <div className="bg-slate-800 py-20 sm:py-28" ref={syncSection}>
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 px-4 sm:px-6 md:flex-row lg:px-8">
-            {/* --- Text Content Column --- */}
+            {/* Text Content Column */}
             <div className="max-w-xl text-center md:text-left">
-              {/* CHANGE: Centered text on mobile, left-aligned on medium+ */}
-              <h2 className="text-3xl font-bold leading-tight tracking-tight text-white md:leading-snug lg:text-4xl">
+              <h2
+                className="text-3xl font-bold leading-tight tracking-tight text-white md:leading-snug lg:text-4xl"
+                ref={syncHeading}
+              >
                 Automatically Sync Your Products to Facebook & Instagram
-                {/* REMOVED: <br /> for natural text flow on all screen sizes. */}
               </h2>
 
-              <p className="mt-4 text-secondary">
+              <p className="mt-4 text-secondary" ref={syncPera}>
                 List products on Instagram & Facebook automatically with ease.
                 No need to manage 3 different platforms—simply update your
                 website, and your products will sync everywhere.
-                {/* REMOVED: <br /> to let the paragraph wrap naturally. */}
               </p>
 
-              <ul className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-4 md:justify-start">
-                {/* CHANGE: Using flex-wrap for a more robust list layout on mobile. */}
+              <ul
+                className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-4 md:justify-start"
+                ref={syncList}
+              >
                 {[
                   "Reach new clients",
                   "Improved online visibility",
@@ -141,12 +159,12 @@ export default function onlineMarketing() {
                   "Facebook & Instagram backlinks",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <img // Using a standard <img> tag is often simpler for static SVGs
+                    <img
                       src="/assets/imgs/ui/tick-li.svg"
                       width={20}
                       height={20}
                       alt="tick icon"
-                      aria-hidden="true" // Decorative image
+                      aria-hidden="true"
                     />
                     <span className="text-sm md:text-base">{feature}</span>
                   </li>
@@ -154,8 +172,8 @@ export default function onlineMarketing() {
               </ul>
             </div>
 
-            {/* --- Image Column --- */}
-            <div className="mt-8 flex-shrink-0 md:mt-0">
+            {/* Image Column */}
+            <div className="mt-8 flex-shrink-0 md:mt-0" ref={syncImage}>
               <Image
                 src="/assets/imgs/ecoms/sync-products-to-fafcebook-and-instagram.webp"
                 width={600}
@@ -169,6 +187,6 @@ export default function onlineMarketing() {
         </div>
       </section>
       <Footer />
-    </>
+    </main>
   );
 }
