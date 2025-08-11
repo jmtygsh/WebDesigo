@@ -102,7 +102,7 @@ export const NotFound = () => {
               Not Found
             </h1>
             <p className="text-content text-base md:text-lg text-gray-300">
-              It looks like this link is broken or the page has moved. Let's get
+              It looks like this link is broken or the page has moved. Let&apos;s get
               you back on track.
             </p>
 

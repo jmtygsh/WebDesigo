@@ -213,7 +213,7 @@ export const About = () => {
             ref={teamImages}
           >
             {founders.map((data) => (
-              <div className="space-y-3">
+              <div className="space-y-3" key={data.id}>
                 <Image
                   className="object-cover w-full h-80 rounded-lg shadow-lg"
                   src={data.src}
