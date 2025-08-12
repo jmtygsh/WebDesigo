@@ -381,6 +381,7 @@ export const toolWeUseDetails = [
     title: "Figma",
     description:
       "A collaborative interface design tool for creating websites and apps.",
+    url: "https://www.figma.com/",
   },
   {
     id: 2,
@@ -388,18 +389,21 @@ export const toolWeUseDetails = [
     title: "GSAP",
     description:
       "A robust JavaScript library for creating high-performance animations.",
+    url: "https://gsap.com/",
   },
   {
     id: 3,
     icon: "/assets/imgs/tools/nextjs.svg",
     title: "Next.js",
     description: "A React framework for building full-stack web applications.",
+    url: "https://nextjs.org/",
   },
   {
     id: 4,
     icon: "/assets/imgs/tools/react-js.svg",
     title: "React JS",
     description: "A JavaScript library for building user interfaces.",
+    url: "https://react.dev/",
   },
   {
     id: 5,
@@ -407,6 +411,7 @@ export const toolWeUseDetails = [
     title: "Shopify",
     description:
       "An e-commerce platform for building and managing online stores.",
+    url: "https://www.shopify.com/",
   },
   {
     id: 6,
@@ -414,6 +419,7 @@ export const toolWeUseDetails = [
     title: "Vite",
     description:
       "A modern frontend build tool for faster and leaner development.",
+    url: "https://vitejs.dev/",
   },
   {
     id: 7,
@@ -421,20 +427,24 @@ export const toolWeUseDetails = [
     title: "Node.js",
     description:
       "A back-end JavaScript runtime environment for server-side applications.",
+    url: "https://nodejs.org/",
   },
   {
     id: 8,
     icon: "/assets/imgs/tools/wordpress.svg",
     title: "WordPress",
     description: "A popular open-source content management system (CMS).",
+    url: "https://wordpress.org/",
   },
   {
     id: 9,
     icon: "/assets/imgs/tools/mongo-db-96.png",
     title: "MongoDB",
     description: "A NoSQL database program for storing large sets of data.",
+    url: "https://www.mongodb.com/",
   },
 ];
+
 
 // Home Page: Image Gallery
 export const images = [

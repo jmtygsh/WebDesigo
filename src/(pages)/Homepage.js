@@ -83,6 +83,7 @@ export const Homepage = () => {
   const toolContainerRefText = useRef(null);
   const toolContainerRefHeading = useRef(null);
   const toolContainerRefBtn = useRef(null);
+  const cursorRef = useRef(null);
 
   // core service cards
   const coreServiceRef = useRef(null);
@@ -480,6 +481,61 @@ export const Homepage = () => {
       ); // overlap to keep the animation flowing smoothly
   });
 
+  // Ref to track if the cursor is currently over a 'pointer' element
+  const isHoveringPointerRef = useRef(false);
+
+  const handleMouseMove = (e) => {
+    const target = e.target; // The element the mouse is directly over
+    const { top, left } = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+
+    // Move the cursor smoothly
+    gsap.to(cursorRef.current, {
+      x,
+      y,
+      duration: 0.5,
+      ease: "power3.out",
+    });
+
+    // --- Conditional Logic Starts Here ---
+
+    // 1. Get the computed style of the element under the mouse
+    const computedStyle = window.getComputedStyle(target);
+
+    // 2. Check if the cursor style is 'pointer'
+    const isPointer = computedStyle.cursor === "pointer";
+
+    // 3. Only animate if the state has changed (to avoid performance issues)
+    if (isPointer && !isHoveringPointerRef.current) {
+      // We entered a 'pointer' element
+      isHoveringPointerRef.current = true;
+      gsap.to(cursorRef.current, { scale: 0, duration: 0.3 }); // Scale up
+    } else if (!isPointer && isHoveringPointerRef.current) {
+      // We left a 'pointer' element
+      isHoveringPointerRef.current = false;
+      gsap.to(cursorRef.current, { scale: 1, duration: 0.3 }); // Scale back to normal
+    }
+  };
+
+  const handleMouseEnter = () => {
+    gsap.to(cursorRef.current, {
+      scale: 1, // Start at normal scale
+      opacity: 1,
+      duration: 0.3,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    // Reset the hover state when the mouse leaves the entire container
+    isHoveringPointerRef.current = false;
+    gsap.to(cursorRef.current, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.3,
+    });
+  };
+
   return (
     <div className="bg-background min-h-screen text-foreground font-sans relative">
       <section className="flex justify-center items-center h-dvh relative">
@@ -653,9 +709,27 @@ export const Homepage = () => {
       </section>
 
       <section
-        className="py-16 md:py-20 overflow-hidden"
+        className="py-16 md:py-20 overflow-hidden relative"
         ref={toolContainerRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
       >
+        <div
+          className="absolute top-0  bg-primary backdrop-blur-sm rounded-full 
+        pointer-events-none z-10 flex items-center justify-center text-white/70 font-semibold"
+          ref={cursorRef}
+          style={{
+            width: 70,
+            height: 70,
+            // We use transforms to center the cursor on the pointer and to scale it for animations
+            transform: "translate(-50%, -50%) scale(0)",
+            opacity: 0, // Start fully transparent
+          }}
+        >
+          hover
+        </div>
+
         <div className="flex flex-col items-start max-w-[95%] lg:max-w-6xl m-auto">
           <div className="flex justify-between items-center w-full">
             <div className="max-w-2xl">
@@ -670,6 +744,8 @@ export const Homepage = () => {
                 create cutting-edge websites.
               </p>
             </div>
+
+            {/* hide on small devices  */}
             <div className="hidden md:flex gap-4" ref={toolContainerRefBtn}>
               <ArrowNavigation handleClick={handlePrevClick} />
               <ArrowNavigation handleClick={handleNextClick} right />
@@ -687,6 +763,7 @@ export const Homepage = () => {
           <Slider ref={sliderRef} datas={toolWeUseDetails} />
         </div>
 
+        {/* hide on large devices  */}
         <div
           className="flex justify-end lg:hidden gap-4 max-w-[90%] m-auto mt-5"
           ref={toolContainerRefBtn}

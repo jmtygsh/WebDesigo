@@ -2,6 +2,7 @@ import React, { useRef, useImperativeHandle, forwardRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard } from "swiper/modules"; // It's good practice to import and use modules explicitly
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -132,14 +133,18 @@ export const Slider = forwardRef(({ datas }, ref) => {
                 />
               </div>
               {/* flex-grow allows this div to take all available vertical space, pushing the content down */}
-              <div className="relative z-10 flex-grow flex flex-col text-center md:text-left">
+              <Link
+                href={data.url} 
+                target="_blank"
+                className="relative z-10 flex-grow flex flex-col text-center md:text-left"
+              >
                 <h3 className="text-white text-xl font-semibold mb-3">
                   {data.title}
                 </h3>
                 <p className="text-slate-400 text-base leading-relaxed">
                   {data.description}
                 </p>
-              </div>
+              </Link>
             </div>
           </SwiperSlide>
         ))}

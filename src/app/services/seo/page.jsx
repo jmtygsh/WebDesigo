@@ -38,7 +38,7 @@ export default function SeoPage() {
   return (
     <>
       <Header />
-      <main className="relative mt-10">
+      <section className="relative mt-10">
         {/* === Hero Section === */}
         <section className="relative flex items-center justify-center h-dvh px-4 py-20 text-center">
           <div className="relative z-10 flex max-w-4xl flex-col items-center space-y-6">
@@ -80,7 +80,6 @@ export default function SeoPage() {
           </div>
         </section>
 
-        {/* === Benefits Section === */}
         <section ref={benefitsSection} className="bg-slate-900 py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto mb-16 text-center">
@@ -93,7 +92,7 @@ export default function SeoPage() {
             </div>
             <div
               ref={benefitCards}
-              className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+              className="grid grid-cols-1 gap-8 md:grid-cols-2 "
             >
               {benefits.map((benefit, index) => (
                 <div
@@ -111,67 +110,7 @@ export default function SeoPage() {
           </div>
         </section>
 
-        {/* === How It Works Section === */}
-        <section ref={processSection} className="py-20 sm:py-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto mb-16 text-center">
-              <h2
-                ref={processHeading}
-                className="text-2xl md:text-4xl/15 lg:text-5xl/15 font-bold tracking-tight text-white"
-              >
-                Our Proven SEO Process
-              </h2>
-              <p ref={processPera} className="mt-4 text-secondary">
-                SEO is a complex process involving over 200 ranking factors. We
-                focus on what truly matters to deliver ongoing improvements and
-                sustainable growth for our clients.
-              </p>
-            </div>
-
-            <div
-              ref={processCards}
-              className="grid grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-8 "
-            >
-              <Image
-                src="/assets/imgs/seo/seo-diagram.webp"
-                width={600}
-                height={400}
-                alt="SEO DIAGRAM"
-                className="rounded-xl"
-                draggable="false"
-              />
-
-              {processSteps.map((step, index) => (
-                <div
-                  key={index}
-                  className="rounded-xl p-6 transition-all duration-300 bg-slate-800/50 hover:bg-slate-800/70 flex justify-center items-center "
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg text-blue-600">
-                      {step.icon}
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-bold text-white">
-                        {step.title}
-                      </h3>
-
-                      <p className="mt-2 text-slate-400 text-base">
-                        {step.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* === Case Studies Section === */}
-        <section
-          ref={caseStudiesSection}
-          className="bg-slate-900 py-20 sm:py-28"
-        >
+        <section ref={caseStudiesSection} className="py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto mb-12 text-center lg:mb-16">
               <h2
@@ -188,7 +127,7 @@ export default function SeoPage() {
             <MasonryGrid data={seoCaseStudiesData} />
           </div>
         </section>
-      </main>
+      </section>
       <Footer />
     </>
   );
