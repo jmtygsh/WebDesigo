@@ -4,19 +4,19 @@ Webdesigo is a clean and fast Next.js template built for creative agencies, stud
 
 
 
-
 ## Color Reference
 
-| Name                     | Preview                                                                 | Hex       |
-| ------------------------ | ----------------------------------------------------------------------- | --------- |
-| Background               | ![#00041f](https://via.placeholder.com/10/00041f?text=+)                | #00041f   |
-| Foreground               | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+)                | #ffffff   |
-| Primary                  | ![#194eff](https://via.placeholder.com/10/194eff?text=+)                | #194eff   |
-| Secondary Background     | ![#6d7791](https://via.placeholder.com/10/6d7791?text=+)                | #6d7791   |
-| Dark                     | ![#00020d](https://via.placeholder.com/10/00020d?text=+)                | #00020d   |
-| Text Secondary           | ![#d6d6d6](https://via.placeholder.com/10/d6d6d6?text=+)                | #d6d6d6   |
-| Accent Green             | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+)                | #00b48a   |
-| Accent Green Light       | ![#00d1a0](https://via.placeholder.com/10/00d1a0?text=+)                | #00d1a0   |
+| Name                   | Hex       |
+| ---------------------- | --------- |
+| Background             | #00041f   |
+| Foreground             | #ffffff   |
+| Primary                | #194eff   |
+| Secondary Background   | #6d7791   |
+| Dark                   | #00020d   |
+| Text Secondary         | #d6d6d6   |
+| Accent Green           | #00b48a   |
+| Accent Green Light     | #00d1a0   |
+
 
 ## 🧑‍💻 Tech Stack
 
