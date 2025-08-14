@@ -1,58 +1,93 @@
-Project Title
+# Webdesigo – Frontend for Website Agencies
 
-This is a [Your Stack, e.g., MERN Stack] project. This application serves as a [briefly describe the purpose of the app].
-Getting Started
+Webdesigo is a clean and fast Next.js template built for creative agencies, studios, and freelancers. It helps you present your services, portfolio, and digital projects in a professional way.
 
-First, clone the repository and navigate into the project directory:
 
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
 
-Next, install the necessary dependencies:
 
+## Color Reference
+
+| Name                     | Preview                                                                 | Hex       |
+| ------------------------ | ----------------------------------------------------------------------- | --------- |
+| Background               | ![#00041f](https://via.placeholder.com/10/00041f?text=+)                | #00041f   |
+| Foreground               | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+)                | #ffffff   |
+| Primary                  | ![#194eff](https://via.placeholder.com/10/194eff?text=+)                | #194eff   |
+| Secondary Background     | ![#6d7791](https://via.placeholder.com/10/6d7791?text=+)                | #6d7791   |
+| Dark                     | ![#00020d](https://via.placeholder.com/10/00020d?text=+)                | #00020d   |
+| Text Secondary           | ![#d6d6d6](https://via.placeholder.com/10/d6d6d6?text=+)                | #d6d6d6   |
+| Accent Green             | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+)                | #00b48a   |
+| Accent Green Light       | ![#00d1a0](https://via.placeholder.com/10/00d1a0?text=+)                | #00d1a0   |
+
+## 🧑‍💻 Tech Stack
+
+- Next js
+- TailwindCSS
+- Gsap/react
+
+
+## 📑 Prerequisites
+- Node.js (v14 or higher)
+- Mailtrap account (for email testing)
+- Google recaptcha v2 
+## ⚙️ Installation
+1. Clone the repository
+```bash
+  git clone <repository-url>
+  cd WebDesigo
+```
+
+2. Install dependencies
+
+```
 npm install
 
-Then, create a .env file in the root directory and add the required environment variables. You can copy the example file if one exists.
+```
 
-cp .env.example .env
+3. Environment Setup Create a .env.local file in the root directory with the following variables:
 
-Populate the .env file with your specific credentials:
+```
+# Mailtrap sandbox (testing only). Use production SMTP host in live environment.
+SMTP_HOST="sandbox.smtp.mailtrap.io"  
 
-# MongoDB Connection String
-MONGO_URI=your_mongodb_uri
+SMTP_PORT="2525"
+SMTP_USER="Your_user"
+SMTP_PASS="Password"
+YOUR_EMAIL_ADDRESS="Your_mail_where_you_will_receive_Mail"
 
-# JSON Web Token Secret
-JWT_SECRET=your_super_secret_jwt_key
 
-# Email Service (e.g., Mailtrap)
-MAILTRAP_SMTP_HOST=your_mailtrap_host
-MAILTRAP_SMTP_PORT=your_mailtrap_port
-MAILTRAP_SMTP_USER=your_mailtrap_user
-MAILTRAP_SMTP_PASS=your_mailtrap_password
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY="Your_Key"
+RECAPTCHA_SECRET_KEY="Your_Secret"
 
-# Google Gemini API Key
-GEMINI_API_KEY=your_gemini_api_key
+```
 
-# Application Base URL
-APP_URL=http://localhost:3000
+## 🚀 Running the Application
 
-Finally, run the development server:
+1. Start the main server
 
+```bash
 npm run dev
+```
 
-Open http://localhost:3000 with your browser to see the result. You can start editing the main application file, and the server should auto-update as you edit.
-Learn More
+2. If Done Development, Build
 
-To learn more about the technologies used in this project, take a look at the following resources:
+```bash
+npm run build
+```
 
-    MongoDB Documentation - learn about our database features and API.
+3. If Done Build
 
-    Express.js Documentation - learn about the web framework.
+```bash
+npm run start
+```
 
-    React Documentation - learn about the UI library.
+## 📚 Dependencies
 
-    Node.js Documentation - learn about the runtime environment.
-
-Deploy Your Project
-
-The easiest way to deploy this app is to use a platform like Vercel, Netlify, or Heroku. Refer to their documentation for specific instructions on deploying a Node.js application.
+- "@gsap/react": "^2.1.2",
+- "next": "15.4.2",
+- "nodemailer": "^7.0.5",
+- "react": "19.1.0",
+- "react-dom": "19.1.0",
+- "react-google-recaptcha": "^3.1.0",
+- "react-icons": "^5.5.0",
+- "react-zoom-pan-pinch": "^3.7.0",
+- "swiper": "^11.2.10"
